@@ -1,0 +1,88 @@
+@import "tailwindcss";
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-white: var(--white);
+  --font-freescpt: var(--font-freescpt);
+  --font-bahnschrift: var(--font-bahnschrift);
+}
+
+:root {
+  --font-bahnschrift: "Bahnschrift", sans-serif;
+  --font-freescpt: "Freescpt", sans-serif;
+  --white: #FFFBED;
+
+}
+
+.dark {
+  --background: oklch(0.145 0 0);
+}
+
+@font-face {
+  font-family: "bahnschrift";
+  src: url("/fonts/bahnschrift.ttf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Freescpt";
+  src: url("/fonts/FREESCPT.TTF") format("opentype");
+  font-weight: 400;
+  font-style: italic;
+}
+
+html {
+  scroll-snap-type: y proximity;
+  scroll-behavior: smooth;
+}
+
+* {
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--color-background);
+
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+section {
+  min-height: 100%;
+  scroll-snap-align: start;
+  overflow: hidden;
+
+}
+
+
+@layer utilities {
+  .text-linear {
+    background: var(--linear);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+  }
+}
+
+@layer base {
+  .nav-text {
+    @apply font-bahnschrift text-[12px] md:text-[14px] lg:text-[16px];
+  }
+
+}
+
+@layer base {
+
+  body {
+    /* @apply bg-background text-foreground; */
+
+  }
+
+}
+
