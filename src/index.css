@@ -2,16 +2,29 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
+  --color-text: var(--text);
+  --color-subtitle: var(--subtitle);
+  --color-background: var(--background);
+  --color-header-bg: var(--header-bg);
+  --color-link: var(--link);
   --color-white: var(--white);
-  --font-freescpt: var(--font-freescpt);
-  --font-bahnschrift: var(--font-bahnschrift);
+  --color-placeholder: var(--placeholder);
+  --color-blue-background: var(--blue-background);
+  --color-linear:var(--linear);
+  --font-cairo: var(--font-cairo);
 }
 
 :root {
-  --font-bahnschrift: "Bahnschrift", sans-serif;
-  --font-freescpt: "Freescpt", sans-serif;
-  --white: #FFFBED;
-
+  --font-cairo: "Cairo", sans-serif;
+  --text: #192D50;
+  --subtitle: #3F65A6;
+  --background: #F3F5F8;
+  --header-bg: #E1EBF8;
+  --link: #0088FF;
+  --white: #FFFFFF;
+  --placeholder: #989898;
+  --blue-background: #99BBDF;
+  --linear: linear-gradient(to left, var(--text), var(--blue-background));
 }
 
 .dark {
@@ -19,18 +32,12 @@
 }
 
 @font-face {
-  font-family: "bahnschrift";
-  src: url("/fonts/bahnschrift.ttf") format("opentype");
+  font-family: "Cairo";
+  src: url("/fonts/Cairo-VariableFont_slnt,wght.ttf") format("opentype");
   font-weight: 400;
   font-style: normal;
 }
 
-@font-face {
-  font-family: "Freescpt";
-  src: url("/fonts/FREESCPT.TTF") format("opentype");
-  font-weight: 400;
-  font-style: italic;
-}
 
 html {
   scroll-snap-type: y proximity;
@@ -43,7 +50,7 @@ html {
 }
 
 body {
-  background-color: var(--color-background);
+
 
 }
 
@@ -61,19 +68,47 @@ section {
 
 
 @layer utilities {
-  .text-linear {
-    background: var(--linear);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    color: transparent;
-  }
+ 
+.text-linear {
+  background: linear-gradient(to left, var(--text), var(--blue-background));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  padding: 2px 0px;
+  display: inline-block;
+}
+  
 }
 
 @layer base {
-  .nav-text {
-    @apply font-bahnschrift text-[12px] md:text-[14px] lg:text-[16px];
+  .main-title {
+    @apply font-cairo text-[20px] md:text-[40px] lg:text-[50px] font-bold;
   }
+    .title {
+    @apply font-cairo text-[18px] md:text-[30px] lg:text-[40px] font-bold;
+  }
+
+    .subtitle {
+    @apply font-cairo text-[12px] md:text-[16px] lg:text-[24px] font-bold;
+  }
+    .text {
+    @apply font-cairo text-[10px] md:text-[14px] lg:text-[20px] font-semibold;
+  }
+    .description {
+    @apply font-cairo text-[10px] md:text-[14px] lg:text-[18px] font-semibold;
+  }
+    .button-text {
+    @apply font-cairo text-[14px] md:text-[16px] lg:text-[20px] font-bold;
+  }
+    .question {
+    @apply font-cairo text-[20px] md:text-[24px] lg:text-[30px] font-semibold;
+  }
+
+
+
+
+
 
 }
 
@@ -85,4 +120,3 @@ section {
   }
 
 }
-
