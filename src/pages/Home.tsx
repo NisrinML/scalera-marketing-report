@@ -10,6 +10,7 @@ const Home = () => {
   const isTablet = useIsTablet()
 const aboutRef = useRef<HTMLDivElement | null>(null);
   return (
+    
     <div className="max-w-7xl py-8">
       {/* Decore image */}
       <img src={Background} alt="backrgound-decore" loading='lazy' decoding="async" width={isTablet ? 300 : 800}
