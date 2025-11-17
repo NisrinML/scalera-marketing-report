@@ -90,7 +90,7 @@ section {
   }
 
   .card-shadow {
-    box-shadow: 24px 48px 0px #CBCDCF;
+    box-shadow: 24px 20px 40px 10px rgba(203, 205, 207, 0.4);
   }
 }
 
