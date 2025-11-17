@@ -11,9 +11,9 @@ type IconProps = {
 };
 
 const icons: Record<string, React.LazyExoticComponent<React.ComponentType<any>>> = {
-  //BurgerMenu: lazy(() => import("../icons/BurgerMenu")),
-
-  
+  Instagram: lazy(() => import("../icons/Instagram")),
+  LinkedIn: lazy(() => import("../icons/LinkedIn")),
+  Gmail: lazy(() => import("../icons/Gmail")),
 };
 
 const Icon: React.FC<IconProps> = ({

@@ -10,7 +10,7 @@
   --color-white: var(--white);
   --color-placeholder: var(--placeholder);
   --color-blue-background: var(--blue-background);
-  --color-linear:var(--linear);
+  --color-linear: var(--linear);
   --font-cairo: var(--font-cairo);
 }
 
@@ -27,8 +27,7 @@
   --linear: linear-gradient(to left, var(--text), var(--blue-background));
 }
 
-.dark {
-}
+.dark {}
 
 @font-face {
   font-family: "Cairo";
@@ -48,10 +47,7 @@ html {
   box-sizing: border-box;
 }
 
-body {
-
-
-}
+body {}
 
 a {
   text-decoration: none;
@@ -64,48 +60,66 @@ section {
   overflow: hidden;
 
 }
- .gradient-background{
+
+.gradient-background {
   background: var(--linear);
- }
- .gradient-background:hover{
+}
+
+.gradient-background:hover {
   background: var(--blue-background);
- }
+}
 
 @layer utilities {
- 
-.text-linear {
-  background: linear-gradient(to left, var(--text), var(--blue-background));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  color: transparent;
-  padding: 2px 0px;
-  display: inline-block;
-}
-  
+
+  .text-linear {
+    background: linear-gradient(to left, var(--text), var(--blue-background));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    padding: 2px 0px;
+    display: inline-block;
+  }
+
+  .btn-shadow {
+    box-shadow: 0px 4px 4px #A5BFCB;
+  }
+
+  .btn-shadow:hover {
+    box-shadow: none;
+  }
+
+  .card-shadow {
+    box-shadow: 24px 48px 0px #CBCDCF;
+  }
 }
 
 @layer base {
   .main-title {
     @apply font-cairo text-[20px] md:text-[40px] lg:text-[50px] font-bold;
   }
-    .title {
+
+  .title {
     @apply font-cairo text-[18px] md:text-[30px] lg:text-[40px] font-bold;
   }
 
-    .subtitle {
-    @apply font-cairo text-[12px] md:text-[16px] lg:text-[24px] font-bold;
+  .subtitle {
+    @apply font-cairo text-[12px] md:text-[16px] lg:text-[24px] font-bold leading-8 md:leading-12;
   }
-    .text {
+
+  .text {
     @apply font-cairo text-[10px] md:text-[14px] lg:text-[20px] font-semibold;
   }
-    .description {
-    @apply font-cairo text-[10px] md:text-[14px] lg:text-[18px] font-semibold;
+
+  .description {
+    @apply font-cairo text-[10px] md:text-[14px] lg:text-[18px] leading-6 md:leading-10;
   }
-    .button-text {
+
+  .button-text {
     @apply font-cairo text-[14px] md:text-[16px] lg:text-[20px] font-semibold;
   }
-    .question {
+
+  .question {
     @apply font-cairo text-[20px] md:text-[24px] lg:text-[30px] font-semibold;
   }
 
