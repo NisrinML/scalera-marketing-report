@@ -28,7 +28,6 @@
 }
 
 .dark {
-  --background: oklch(0.145 0 0);
 }
 
 @font-face {
@@ -65,7 +64,12 @@ section {
   overflow: hidden;
 
 }
-
+ .gradient-background{
+  background: var(--linear);
+ }
+ .gradient-background:hover{
+  background: var(--blue-background);
+ }
 
 @layer utilities {
  
@@ -99,7 +103,7 @@ section {
     @apply font-cairo text-[10px] md:text-[14px] lg:text-[18px] font-semibold;
   }
     .button-text {
-    @apply font-cairo text-[14px] md:text-[16px] lg:text-[20px] font-bold;
+    @apply font-cairo text-[14px] md:text-[16px] lg:text-[20px] font-semibold;
   }
     .question {
     @apply font-cairo text-[20px] md:text-[24px] lg:text-[30px] font-semibold;
