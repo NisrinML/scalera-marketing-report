@@ -1,0 +1,122 @@
+@import "tailwindcss";
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-text: var(--text);
+  --color-subtitle: var(--subtitle);
+  --color-background: var(--background);
+  --color-header-bg: var(--header-bg);
+  --color-link: var(--link);
+  --color-white: var(--white);
+  --color-placeholder: var(--placeholder);
+  --color-blue-background: var(--blue-background);
+  --color-linear:var(--linear);
+  --font-cairo: var(--font-cairo);
+}
+
+:root {
+  --font-cairo: "Cairo", sans-serif;
+  --text: #192D50;
+  --subtitle: #3F65A6;
+  --background: #F3F5F8;
+  --header-bg: #E1EBF8;
+  --link: #0088FF;
+  --white: #FFFFFF;
+  --placeholder: #989898;
+  --blue-background: #99BBDF;
+  --linear: linear-gradient(to left, var(--text), var(--blue-background));
+}
+
+.dark {
+  --background: oklch(0.145 0 0);
+}
+
+@font-face {
+  font-family: "Cairo";
+  src: url("/fonts/Cairo-VariableFont_slnt,wght.ttf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+html {
+  scroll-snap-type: y proximity;
+  scroll-behavior: smooth;
+}
+
+* {
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+body {
+
+
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+section {
+  min-height: 100%;
+  scroll-snap-align: start;
+  overflow: hidden;
+
+}
+
+
+@layer utilities {
+ 
+.text-linear {
+  background: linear-gradient(to left, var(--text), var(--blue-background));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  padding: 2px 0px;
+  display: inline-block;
+}
+  
+}
+
+@layer base {
+  .main-title {
+    @apply font-cairo text-[20px] md:text-[40px] lg:text-[50px] font-bold;
+  }
+    .title {
+    @apply font-cairo text-[18px] md:text-[30px] lg:text-[40px] font-bold;
+  }
+
+    .subtitle {
+    @apply font-cairo text-[12px] md:text-[16px] lg:text-[24px] font-bold;
+  }
+    .text {
+    @apply font-cairo text-[10px] md:text-[14px] lg:text-[20px] font-semibold;
+  }
+    .description {
+    @apply font-cairo text-[10px] md:text-[14px] lg:text-[18px] font-semibold;
+  }
+    .button-text {
+    @apply font-cairo text-[14px] md:text-[16px] lg:text-[20px] font-bold;
+  }
+    .question {
+    @apply font-cairo text-[20px] md:text-[24px] lg:text-[30px] font-semibold;
+  }
+
+
+
+
+
+
+}
+
+@layer base {
+
+  body {
+    /* @apply bg-background text-foreground; */
+
+  }
+
+}
