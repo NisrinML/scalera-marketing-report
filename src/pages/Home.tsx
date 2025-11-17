@@ -4,6 +4,7 @@ import useIsTablet from "@/hooks/useTablet"
 import AboutSection from "@/sections/AboutSection"
 import ServicesSection from "@/sections/ServicesSection"
 import { useRef } from "react";
+import TextSection from "@/sections/TextSection"
 const Home = () => {
   const isTablet = useIsTablet()
 const aboutRef = useRef<HTMLDivElement | null>(null);
@@ -26,6 +27,9 @@ const aboutRef = useRef<HTMLDivElement | null>(null);
       </div>
       <div id="services" className="relative py-4" ref={aboutRef}>
         <ServicesSection />
+      </div>
+            <div id="text">
+        <TextSection />
       </div>
     </div>
   )
