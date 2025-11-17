@@ -16,14 +16,14 @@
 
 :root {
   --font-cairo: "Cairo", sans-serif;
-  --text: #192D50;
-  --subtitle: #3F65A6;
+  --text: #1C3C67;
+  --subtitle: #33669B;
   --background: #F3F5F8;
   --header-bg: #E1EBF8;
   --link: #0088FF;
   --white: #FFFFFF;
   --placeholder: #989898;
-  --blue-background: #99BBDF;
+  --blue-background: #9ABCDF;
   --linear: linear-gradient(to left, var(--text), var(--blue-background));
 }
 
