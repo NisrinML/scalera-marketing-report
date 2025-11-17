@@ -32,7 +32,7 @@ const AboutSection = () => {
       </div>
       {!isTablet &&
         <div className='flex items-end flex-[1.5]'>
-          <img src={AboutImage} alt="hero image" loading='lazy' decoding="async" className="object-cover " width={isTablet ? 200 : 800} />
+          <img src={AboutImage} alt="about image" loading='lazy' decoding="async" className="object-cover " width={isTablet ? 200 : 800} aria-label="hero image"/>
         </div>}
     </section>
   )

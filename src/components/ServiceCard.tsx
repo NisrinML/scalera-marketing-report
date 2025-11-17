@@ -28,6 +28,7 @@ const ServiceCard = ({ card }: ServiceCardComponentProps) => {
           width={isTablet?10:80}
           height={isTablet?10:80}
           className="w-12 h-12 md:w-20 md:h-20 object-contain"
+          aria-label="card image"
         />
       </div>
 

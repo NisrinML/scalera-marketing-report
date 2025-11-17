@@ -26,6 +26,7 @@ const Footer = () => {
                   width={isTablet ? 120 : 160}
                   loading="lazy"
                   decoding="async"
+                  aria-label="scalera-logo"
                 />
               </NavLink>
               <div className="flex flex-row gap-2">

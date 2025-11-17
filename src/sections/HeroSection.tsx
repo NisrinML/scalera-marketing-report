@@ -18,7 +18,7 @@ const HeroSection = () => {
         </p>
       </div>
       <div className='flex items-end flex-[1.5]'>
-        <img src={HeroImage} alt="hero image" loading='lazy' decoding="async" className="object-cover " width={isTablet ? 200 : 800} />
+        <img src={HeroImage} alt="hero image" loading='lazy' decoding="async" className="object-cover " width={isTablet ? 200 : 800} aria-label="hero image"/>
       </div>
     </section>
   )

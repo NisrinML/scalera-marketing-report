@@ -31,6 +31,7 @@ const Header = () => {
               width={isTablet?120:160}
               loading="lazy"
               decoding="async"
+              aria-label="scalera logo"
             />
           </NavLink>
           <Button>

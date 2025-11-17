@@ -76,6 +76,18 @@ section {
 .animate-fade-in {
   animation: fade-in 0.7s ease forwards;
 }
+.text-link {
+  color: var(--link);
+  border-bottom: 2px solid var(--link); 
+  padding-bottom: 4px;
+  transition: all 0.3s ease;
+}
+
+.text-link:hover {
+  color: var(--color-blue-background);
+  transform: scale(1.02);
+  border-bottom:2px solid  var(--color-blue-background);
+}
 @layer utilities {
 
   .text-linear {
