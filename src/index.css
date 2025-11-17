@@ -96,7 +96,7 @@ section {
 
 @layer base {
   .main-title {
-    @apply font-cairo text-[20px] md:text-[40px] lg:text-[50px] font-bold;
+    @apply font-cairo text-[20px] md:text-[40px] lg:text-[50px] font-bold leading-10 md:leading-24;
   }
 
   .title {
@@ -108,7 +108,7 @@ section {
   }
 
   .text {
-    @apply font-cairo text-[10px] md:text-[14px] lg:text-[20px] font-semibold;
+    @apply font-cairo text-[10px] md:text-[14px] lg:text-[20px] font-semibold leading-6 md:leading-10;
   }
 
   .description {
