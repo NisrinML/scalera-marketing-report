@@ -1,6 +1,7 @@
 import HeroSection from "@/sections/HeroSection"
 import Background from '@/assets/Decore.webp'
 import useIsTablet from "@/hooks/useTablet"
+import AboutSection from "@/sections/AboutSection"
 const Home = () => {
   const isTablet = useIsTablet()
   return (
@@ -11,6 +12,9 @@ const Home = () => {
       />
       <div id="hero">
         <HeroSection />
+      </div>
+      <div id="about">
+        <AboutSection />
       </div>
     </div>
   )
