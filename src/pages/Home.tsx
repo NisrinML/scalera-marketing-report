@@ -5,6 +5,7 @@ import AboutSection from "@/sections/AboutSection"
 import ServicesSection from "@/sections/ServicesSection"
 import { useRef } from "react";
 import TextSection from "@/sections/TextSection"
+import ResultsSection from "@/sections/ResultsSection"
 const Home = () => {
   const isTablet = useIsTablet()
 const aboutRef = useRef<HTMLDivElement | null>(null);
@@ -19,16 +20,19 @@ const aboutRef = useRef<HTMLDivElement | null>(null);
       {!isTablet && <div style={{ top: (aboutRef.current?.offsetTop || 0) + (aboutRef.current?.offsetHeight || 0) - 200, }}
         className="absolute w-[200px] h-[200px] bottom-0 left-0 bg-header-bg rounded-tr-full"></div>}
 
-      <div id="hero" >
+      <div id="Hero" >
         <HeroSection />
       </div>
-      <div id="about">
+      <div id="About">
         <AboutSection />
       </div>
-      <div id="services" className="relative py-4" ref={aboutRef}>
+      <div id="Services" className="relative py-4" ref={aboutRef}>
         <ServicesSection />
       </div>
-            <div id="text">
+      <div id="Results" className="w-full">
+        <ResultsSection />
+      </div>
+            <div id="Text">
         <TextSection />
       </div>
     </div>
