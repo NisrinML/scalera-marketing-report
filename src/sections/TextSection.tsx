@@ -5,7 +5,7 @@ const TextSection = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-        <section className=" mx-auto px-8 lg:px-0 flex items-center justify-center py-6 md:py-12">
+        <section className=" mx-auto px-8 xl:px-0 flex items-center justify-center py-6 md:py-20 2xl:py-32">
             <motion.div  
             ref={ref}
         initial={{ clipPath: "inset(0% 50% 0% 50%)", opacity: 0 }}
