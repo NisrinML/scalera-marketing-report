@@ -8,10 +8,10 @@ const Footer = () => {
   const isTablet = useIsTablet()
   return (
     <footer className=" bg-header-bg relative">
-      <div className="max-w-7xl mx-auto py-8 flex flex-col gap-4">
+      <div className="max-w-[1440px] mx-auto py-8 flex flex-col gap-4">
         <div className="flex flex-col-reverse gap-4 md:flex-row md:justify-between">
           {/* connect section */}
-          <div className="flex flex-col items-start gap-4 px-8 lg:px-0 md:gap-8 flex-1 overflow-hidden">
+          <div className="flex flex-col items-start gap-4 px-8 2xl:px-0 md:gap-8 flex-1 overflow-hidden">
             <h4 className="text-subtitle subtitle -mb-2 lg:mb-0">تواصل معنا</h4>
             <Input type="text" placeholder="بريدك الالكتروني" />
             <Button className="description w-full lg:w-fit">اشتراك</Button>
@@ -23,21 +23,21 @@ const Footer = () => {
                 <img
                   src={logo}
                   alt="scalera-logo"
-                  width={isTablet ? 120 : 160}
+                  width={isTablet ? 120 : 180}
                   loading="lazy"
                   decoding="async"
                   aria-label="scalera-logo"
                 />
               </NavLink>
               <div className="flex flex-row gap-2">
-                <NavLink to="" className="flex items-center justify-center rounded-full bg-text w-8 h-8 md:h-12 md:w-12  hover:scale-[1.02] m-1">
-                  <Icon name="Instagram" cls="flex items-center justify-center w-3 h-3 md:w-6 md:h-6  hover:cursor-pointer" />
+                <NavLink to="" className="flex items-center justify-center rounded-full bg-text w-8 h-8 md:h-12 md:w-12  hover:scale-[1.02] m-1 ">
+                  <Icon name={isTablet?"SInstagram":"Instagram"} cls="flex items-center justify-center hover:cursor-pointer " />
                 </NavLink>
                 <NavLink to="" className="flex items-center justify-center rounded-full bg-subtitle w-8 h-8 md:h-12 md:w-12  hover:scale-[1.02] m-1">
-                  <Icon name="LinkedIn" cls="flex items-center justify-center w-3 h-3 md:w-6 md:h-6  hover:cursor-pointer" />
+                  <Icon name={isTablet?"SFacebook":"Facebook"} cls="flex items-center justify-center  hover:cursor-pointer" />
                 </NavLink>
                 <NavLink to="" className="flex items-center justify-center rounded-full bg-blue-background w-8 h-8 md:h-12 md:w-12  hover:scale-[1.02] m-1">
-                  <Icon name="Gmail" cls="flex items-center justify-center w-3 h-3 md:w-6 md:h-6  hover:cursor-pointer" />
+                  <Icon name={isTablet?"SGmail":"Gmail"} cls="flex items-center justify-center  hover:cursor-pointer "/>
                 </NavLink>
               </div>
             </div>
@@ -45,7 +45,7 @@ const Footer = () => {
           </div>
         </div>
         {/* copy right section */}
-        <div className="flex flex-col-reverse md:flex-row justify-between items-center flex-1 mt-4 lg:mt-16 md:px-8 lg:px-0">
+        <div className="flex flex-col-reverse md:flex-row justify-between items-center flex-1 mt-4 lg:mt-16 md:px-8 2xl:px-0">
           <div className="flex flex-row justify-between gap-8 md:gap-16 text-text description">
             <h4>شروط الاستخدام</h4>
             <h4>سياسة الخصوصية</h4>

@@ -1,11 +1,9 @@
 
 const Gmail = () => {
   return (
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M16 20H19C19.2652 20 19.5196 19.8946 19.7071 19.7071C19.8946 19.5196 20 19.2652 20 19V5C20 4.73478 19.8946 4.48043 19.7071 4.29289C19.5196 4.10536 19.2652 4 19 4H16V20Z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-<path d="M5 20H8V4H5C4.73478 4 4.48043 4.10536 4.29289 4.29289C4.10536 4.48043 4 4.73478 4 5V19C4 19.2652 4.10536 19.5196 4.29289 19.7071C4.48043 19.8946 4.73478 20 5 20Z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-<path d="M16 4L12 8L8 4" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-<path d="M4 6.5L12 14L20 6.5" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M22.6667 27.3334H9.33341C5.33341 27.3334 2.66675 25.3334 2.66675 20.6667V11.3334C2.66675 6.66669 5.33341 4.66669 9.33341 4.66669H22.6667C26.6667 4.66669 29.3334 6.66669 29.3334 11.3334V20.6667C29.3334 25.3334 26.6667 27.3334 22.6667 27.3334Z" stroke="white" strokeWidth="1.5" stroke-miterlimit="10" strokeLinecap="round" strokeLinejoin="round"/>
+<path d="M22.6666 12L18.4932 15.3333C17.1199 16.4267 14.8666 16.4267 13.4932 15.3333L9.33325 12" stroke="white" strokeWidth="1.5" stroke-miterlimit="10" strokeLinecap="round" strokeLinejoin="round"/>
 </svg>
 
   )

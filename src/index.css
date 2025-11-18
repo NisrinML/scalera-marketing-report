@@ -113,6 +113,12 @@ section {
   }
 }
 
+@media (max-width: 1120px) {
+ .card-shadow {
+    box-shadow: 12px 10px 20px 5px rgba(203, 205, 207, 0.4);
+  }
+}
+
 @layer base {
   .main-title {
     @apply font-cairo text-[20px] md:text-[40px] lg:text-[50px] font-bold leading-10 md:leading-24;

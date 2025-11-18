@@ -22,13 +22,13 @@ const Header = () => {
                     ? 'bg-header-bg/80 backdrop-blur-md shadow-md '
                     : 'bg-header-bg backdrop-blur-sm  '
                 }`}>
-            <div className="max-w-7xl mx-auto px-4 lg:px-0">
+            <div className="max-w-[1440px] mx-auto px-4 2xl:px-0">
                 <div className="flex items-center justify-between h-16 md:h-20 ">
                     <NavLink to="/" aria-label="scalera-logo">
             <img
               src={logo}
               alt="scalera-logo"
-              width={isTablet?120:160}
+              width={isTablet?80:120}
               loading="lazy"
               decoding="async"
               aria-label="scalera logo"

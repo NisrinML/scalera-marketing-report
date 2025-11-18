@@ -12,7 +12,7 @@ const MainLayout = () => {
       <Header />
 
       <main className="flex grow w-full">
-        <div className="max-w-7xl mx-auto w-full">
+        <div className="max-w-[1440px] mx-auto w-full">
           <Outlet />
         </div>
       </main>

@@ -27,7 +27,7 @@ const ServicesSection = () => {
             loc: "l",
         },
     ];
-    const isTablet = useIsTablet(900)
+    const isTablet = useIsTablet(920)
     const [activeIndex, setActiveIndex] = useState(0);
     useEffect(() => {
         if (!isTablet) return;
@@ -58,7 +58,7 @@ const ServicesSection = () => {
     };
 
     return (
-        <section className="relative mx-auto px-8 lg:px-0 flex flex-col items-center justify-center gap-4">
+        <section className="relative mx-auto px-8 xl:px-0 flex flex-col items-center justify-center gap-4">
             <h1 className="main-title text-linear">ماذا سيقدّمه لك التقرير؟</h1>
             {isTablet ?
                 <div className="relative w-full flex flex-row items-center justify-center  min-h-[300px] overflow-hidden">
@@ -78,7 +78,7 @@ const ServicesSection = () => {
                     viewport={{ once: true }}
                 >
                     {cardList.map((card, index) => (
-                        <motion.div key={index} variants={cardVariants} className="p-16">
+                        <motion.div key={index} variants={cardVariants} className="p-16 md:p-6 lg:p-16">
                             <ServiceCard card={card} />
                         </motion.div>
                     ))}

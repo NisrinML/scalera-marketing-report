@@ -12,8 +12,11 @@ type IconProps = {
 
 const icons: Record<string, React.LazyExoticComponent<React.ComponentType<any>>> = {
   Instagram: lazy(() => import("../icons/Instagram")),
-  LinkedIn: lazy(() => import("../icons/LinkedIn")),
+  Facebook: lazy(() => import("../icons/Facebook")),
   Gmail: lazy(() => import("../icons/Gmail")),
+    SInstagram: lazy(() => import("../icons/SInstagram")),
+  SFacebook: lazy(() => import("../icons/SFacebook")),
+  SGmail: lazy(() => import("../icons/SGmail")),
 };
 
 const Icon: React.FC<IconProps> = ({

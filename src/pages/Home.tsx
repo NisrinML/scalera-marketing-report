@@ -11,12 +11,12 @@ const Home = () => {
 const aboutRef = useRef<HTMLDivElement | null>(null);
   return (
     
-    <div className="max-w-7xl py-8">
+    <div className="max-w-[1440px] py-8">
       {/* Decore image */}
-      <img src={Background} alt="backrgound-decore" loading='lazy' decoding="async" width={isTablet ? 300 : 600}
+      {/* <img src={Background} alt="backrgound-decore" loading='lazy' decoding="async" width={isTablet ? 300 : 600}
         className='absolute top-0 left-0 object-contain' aria-label="decore image"
       />
-      {/* {!isTablet && <div style={{ top: aboutRef.current?.offsetTop, }}
+      {!isTablet && <div style={{ top: aboutRef.current?.offsetTop, }}
         className="absolute w-[200px] h-[200px] top-0 right-0 bg-background rounded-bl-full"></div>}
       {!isTablet && <div style={{ top: (aboutRef.current?.offsetTop || 0) + (aboutRef.current?.offsetHeight || 0) - 200, }}
         className="absolute w-[200px] h-[200px] bottom-0 left-0 bg-header-bg rounded-tr-full"></div>} */}
