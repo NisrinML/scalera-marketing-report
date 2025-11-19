@@ -1,5 +1,6 @@
 
 import MainLayout from "@/layouts/MainLayout";
+import CompanyInfo from "@/pages/CompanyInfo";
 import Home from "@/pages/Home";
 import UserInfo from "@/pages/UserInfo";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
@@ -12,6 +13,7 @@ const router = createBrowserRouter([
     children: [
       { path: "/", element: <Home /> },
       { path: "/user-information", element: <UserInfo /> },
+      { path: "/company-information", element: <CompanyInfo /> },
     ],
   },
 

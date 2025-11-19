@@ -59,7 +59,7 @@ const ServicesSection = () => {
 
     return (
         <section className="relative mx-auto px-8 xl:px-0 flex flex-col items-center justify-center gap-4">
-            <h1 className="main-title text-linear">ماذا سيقدّمه لك التقرير؟</h1>
+            <h1 className="title text-linear">ماذا سيقدّمه لك التقرير؟</h1>
             {isTablet ?
                 <div className="relative w-full flex flex-row items-center justify-center  min-h-[300px] overflow-hidden">
 

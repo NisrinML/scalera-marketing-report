@@ -125,7 +125,7 @@ section {
   }
 
   .title {
-    @apply font-cairo text-[18px] md:text-[30px] lg:text-[40px] font-bold;
+    @apply font-cairo text-[18px] md:text-[30px] lg:text-[40px] font-bold leading-12 md:leading-20;
   }
 
   .subtitle {

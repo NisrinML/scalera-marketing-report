@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom"
+import { NavLink, useNavigate } from "react-router-dom"
 import logo from "../assets/logo.webp";
 import useIsTablet from "@/hooks/useTablet";
 import Button from "@/components/ui/Button";
@@ -11,13 +11,13 @@ import Input from "@/components/ui/Input";
 const UserInfo = () => {
   const isTablet = useIsTablet()
   const [formData, setFormData] = useState<UserInformation>({
-    firstName: '',
-    lastName: '',
+    first_name: '',
+    last_name: '',
     email: '',
     phone: '',
   });
   const [errors, setErrors] = useState<ValidationError>({});
-
+  const navigate=useNavigate()
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
@@ -30,13 +30,15 @@ const UserInfo = () => {
 
     if (Object.keys(validationErrors).length === 0) {
       console.log(formData)
-     setFormData({
-  firstName: '',
-  lastName: '',
-  email: '',
-  phone: '',
-});
-setErrors({});
+      e.preventDefault()
+      navigate('/company-information')
+      setFormData({
+        first_name: '',
+        last_name: '',
+        email: '',
+        phone: '',
+      });
+      setErrors({});
     } else {
       setErrors(validationErrors);
     }
@@ -61,24 +63,24 @@ setErrors({});
         </div>
         {/* Container Section */}
         <form onSubmit={handleSubmit} className="flex flex-col items-center md:rounded-3xl md:bg-background gap-6 md:gap-8 p-4 md:p-8 mx-8 2xl:mx-0 ">
-          <h1 className="main-title text-linear ">لنرسل لك تقريرك الآن!</h1>
+          <h1 className="title text-linear ">لنرسل لك تقريرك الآن!</h1>
           <div className="flex flex-col gap-2 self-start md:gap-4 items-start w-full">
             <h2 className="subtitle text-subtitle">  1- ماهو اسمك؟*</h2>
             <div className="flex flex-row items-start justify-center gap-4 md:gap-8 w-full lg:w-[80%]">
               <Input
-                name="firstName"
+                name="first_name"
                 placeholder="الاسم"
-                value={formData.firstName}
+                value={formData.first_name}
                 onChange={handleChange}
-                error={errors.firstName}
+                error={errors.first_name}
                 required
               />
               <Input
-                name="lastName"
+                name="last_name"
                 placeholder="الكنية"
-                value={formData.lastName}
+                value={formData.last_name}
                 onChange={handleChange}
-                error={errors.lastName}
+                error={errors.last_name}
                 required
               />
             </div>

@@ -16,7 +16,7 @@ const TextSection = () => {
         }
         transition={{ duration: 0.9, ease: "easeOut" }}
             className=' flex flex-col gap-2 lg:gap-4 text-center px-10 py-6 lg:px-44 lg:py-12 border border-text rounded-tl-[50px] rounded-br-[50px] lg:rounded-tl-[100px] lg:rounded-br-[100px]'>
-      <h1 className="main-title text-linear">النجاح استراتيجية لا صدفة</h1>
+      <h1 className="title text-linear">النجاح استراتيجية لا صدفة</h1>
       <p className='text-text text'>معظم الشركات لا تلفت الانتباه، ليس لأن منتجاتها ضعيفة، بل لأن رسالتها التسويقية غير واضحة.
         <br/> في سوق مزدحم، من يعبّر عن قيمته بوضوح هو من يُسمع.
         <br/>

@@ -9,7 +9,7 @@ const AboutSection = () => {
   return (
     <section className={`relative mx-auto px-8 py-2 md:py-4 2xl:px-0 flex flex-col md:flex-row gap-4 items-center ${isTablet ? `bg-header-bg` : `bg-transparent`}`}>
       <div className='flex flex-col items-start justify-center text-right gap-4 lg:gap-8 flex-2'>
-        <h1 className='main-title text-linear self-center md:self-start'>
+        <h1 className='title text-linear self-center md:self-start'>
           النتائج لا تناسب الجهد المبذول؟
         </h1>
         <p className='text-text text'>
