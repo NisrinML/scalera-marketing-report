@@ -11,6 +11,7 @@
   --color-placeholder: var(--placeholder);
   --color-blue-background: var(--blue-background);
   --color-linear: var(--linear);
+  --color-hover: var(--hover);
   --font-cairo: var(--font-cairo);
 }
 
@@ -24,6 +25,7 @@
   --white: #FFFFFF;
   --placeholder: #989898;
   --blue-background: #9ABCDF;
+  --hover:#E0E7F1;
   --linear: linear-gradient(to left, var(--text), var(--blue-background));
 }
 
@@ -68,6 +70,14 @@ section {
 .gradient-background:hover {
   background: var(--blue-background);
 }
+
+.normal-background {
+  background: transparent;
+}
+.normal-background:hover {
+  background: var(--hover);
+}
+
 @keyframes fade-in {
   0% { opacity: 0; transform: translateX(10px); }
   100% { opacity: 1; transform: translateX(0); }

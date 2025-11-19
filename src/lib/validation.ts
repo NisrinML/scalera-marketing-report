@@ -1,5 +1,6 @@
-import type { UserInformation } from "@/types/UserInformation";
-import type { ValidationError } from "@/types/ValidationError";
+import type { CompanyInformation } from "@/types/CompanyInformation";
+import type { UserInformation } from "@/types/userInformation";
+import type { ValidationError } from "@/types/validationError";
 
 export const validatePage1 = (data: UserInformation): ValidationError => {
   const errors: ValidationError = {};
@@ -35,6 +36,43 @@ export const validatePage1 = (data: UserInformation): ValidationError => {
       errors.phone = 'رقم الجوال قصير جداً';
     }
   }
+
+  return errors;
+};
+
+export const validatePage2 = (data: CompanyInformation): ValidationError => {
+  const errors: ValidationError = {};
+
+  if (!data.name.trim()) {
+    errors.name = 'اسم الشركة مطلوب';
+  } else if (data.name.trim().length < 2) {
+    errors.name = 'يجب أن يكون اسم الشركة على الأقل حرفين';
+  }
+
+  // if (!data.business_type.trim()) {
+  //   errors.business_type = 'Business type is required';
+  // }
+
+  if (!data.website.trim()) {
+    errors.website = 'عنوان موقع الشركة مطلوب';
+  } 
+
+  if (data.employees_from == 0) {
+    errors.employees_from = 'عدد الموظفين مطلوب';
+  }
+
+  if (data.employees_to < data.employees_from) {
+    errors.employees_to = 'Employee range end must be greater than start';
+  }
+
+  // if (data.revenue_from < 0) {
+  //   errors.revenue_from = 'Invalid revenue amount';
+  // }
+
+  // if (data.revenue_to < data.revenue_from) {
+  //   errors.revenue_to = 'Revenue range end must be greater than start';
+  // }
+
 
   return errors;
 };

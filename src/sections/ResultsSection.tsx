@@ -11,11 +11,11 @@ const ResultsSection = () => {
   ]
   return (
     <section className="min-h-screen bg-background " >
-        <div className="flex flex-col mx-auto items-center text-center gap-4 pt-4 md:gap-8 md:pt-8">
+        <div className="flex flex-col mx-auto items-center text-center gap-4 pt-4 md:gap-8 md:pt-8 max-w-5xl">
             <div className="px-8 md:px-16 lg:px-24">
               <h1 className="title text-linear ">استخدم هذه الخطة التسويقية المخصّصة لتنمية أعمالك وتحقيق نتائج ملموسة</h1>
            </div>
-            <div className="flex flex-col items-start">
+            <div className="flex flex-col items-start ">
               {
                 resultsList.map((result,index)=>{return(
                   <div key={index} >
