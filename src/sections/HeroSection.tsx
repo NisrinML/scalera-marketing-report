@@ -1,7 +1,7 @@
 
 import HeroImage from "@/assets/HeroImage.webp"
 import useIsTablet from '@/hooks/useTablet'
-
+import { motion } from "framer-motion"
 
 const HeroSection = () => {
 
@@ -17,9 +17,19 @@ const HeroSection = () => {
           أنت بحاجة إلى خطة تسويق تشعر بالثقة تجاهها.<br /> شارك في التقييم السريع لمدة 10 دقائق فقط، واحصل على خطة تسويق مُخصّصة مجانًا تساعدك على زيادة إيرادات عملك وتعزيز نموه.
         </p>
       </div>
-      <div className='flex items-end flex-[1.5]'>
-        <img src={HeroImage} alt="hero image" loading='lazy' decoding="async" className="object-cover " width={isTablet ? 200 : 800} aria-label="hero image"/>
-      </div>
+      <div className='flex items-end flex-[1.5] overflow-hidden'>
+    <motion.img
+  src={HeroImage}
+  alt="hero image"
+  loading="lazy"
+  decoding="async"
+  width={isTablet ? 200 : 800}
+  className="object-cover"
+  initial={{ opacity: 0, y: 40 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 1, ease: "easeOut" }}
+/>
+</div>
     </section>
   )
 }
