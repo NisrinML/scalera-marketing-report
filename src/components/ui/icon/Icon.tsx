@@ -22,6 +22,7 @@ const icons: Record<string, React.LazyExoticComponent<React.ComponentType<any>>>
   Face3: lazy(() => import("../icons/Face3")),
   Face4: lazy(() => import("../icons/Face4")),
   Face5: lazy(() => import("../icons/Face5")),
+  Download: lazy(() => import("../icons/Download")),
 };
 
 const Icon: React.FC<IconProps> = ({

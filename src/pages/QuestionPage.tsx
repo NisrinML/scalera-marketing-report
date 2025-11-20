@@ -6,6 +6,8 @@ import { useContext, useEffect, useState } from "react";
 import Button from "@/components/ui/Button";
 import { cn } from "@/lib/utils";
 import { ProgressBar } from "@/components/BrogressBar";
+import ReportModal from "@/components/ReportModal";
+import Icon from "@/components/ui/icon/Icon";
 interface QuestionnaireState {
   [key: number]: Answer
 }
@@ -13,124 +15,125 @@ const QuestionPage = () => {
   const isTablet = useIsTablet()
   const companyId = 5 //localStorage.get("companyId")
   const [questions, setQuestions] = useState<Question[]>([
-        {
-            "id": 1,
-            "text": "هل الرسالة التي توصلها عن منتجاتك أو خدماتك تساعد العملاء على فهم كيف يمكن لهذه المنتجات أو الخدمات مساعدتهم على البقاء والازدهار؟",
-            "type": "likert",
-            "step": 1,
-            "options": null
-        },
-        {
-            "id": 2,
-            "text": "هل يستطيع عملاؤك تسمية المشكلة الرئيسية التي تحلها شركتك؟",
-            "type": "likert",
-            "step": 1,
-            "options": null
-        },
-        {
-            "id": 3,
-            "text": "هل رسالتك واضحة وبسيطة؟",
-            "type": "likert",
-            "step": 1,
-            "options": null
-        },
-        {
-            "id": 4,
-            "text": "عند كتابة نصوص التسويق، هل تبدأ بالحديث عن المشكلة التي يحلها منتجك أو خدمتك للعميل؟",
-            "type": "yesno",
-            "step": 1,
-            "options": null
-        },
-        {
-            "id": 5,
-            "text": "هل لديك عرض تقديمي قصير وواضح يجذب الانتباه ويسهل فهمه؟",
-            "type": "yesno",
-            "step": 2,
-            "options": null
-        },
-        {
-            "id": 6,
-            "text": "هل يعرف كل شخص في شركتك كيفية الإجابة بطريقة مقنعة عن سؤال: \"ماذا تفعلون؟\"",
-            "type": "likert",
-            "step": 2,
-            "options": null
-        },
-        {
-            "id": 7,
-            "text": "صحيح أم خطأ: شعارنا يساعدنا على التميز عن المنافسين ويجعلنا لا ننسى",
-            "type": "yesno",
-            "step": 3,
-            "options": null
-        },
-        {
-            "id": 8,
-            "text": "صحيح أم خطأ: لدينا دليل أسلوب لضمان تطبيق علامتنا التجارية بشكل متسق وموحد في التسويق",
-            "type": "yesno",
-            "step": 3,
-            "options": null
-        },
-        {
-            "id": 9,
-            "text": "هل لديك دليل عمل (Playbook) يساعد فريقك على الالتزام برسالة العلامة التجارية لضمان استمرارية التناسق في التسويق؟",
-            "type": "likert",
-            "step": 3,
-            "options": null
-        },
-        {
-            "id": 10,
-            "text": "صحيح أم خطأ: موقعي الإلكتروني يحقق لي العملاء المحتملين والمبيعات التي أرغب بها",
-            "type": "yesno",
-            "step": 4,
-            "options": null
-        },
-        {
-            "id": 11,
-            "text": "هل يؤدي موقعك الإلكتروني بانتظام إلى تلقي الطلبات؟",
-            "type": "likert",
-            "step": 4,
-            "options": null
-        },
-        {
-            "id": 12,
-            "text": "عد النظر إلى عنوان موقعك لثلاث ثوانٍ، هل يمكن للعميل المحتمل معرفة (1) ما تقدمه، (2) كيف يحسن حياته، و(3) ما عليه فعله لشراء المنتج أو الخدمة؟",
-            "type": "likert",
-            "step": 4,
-            "options": null
-        },
-        {
-            "id": 13,
-            "text": "هل قمت بجمع وعرض شهادات العملاء على موقعك الإلكتروني؟",
-            "type": "yesno",
-            "step": 4,
-            "options": null
-        },
-        {
-            "id": 14,
-            "text": "هل يشمل موقعك الإلكتروني العناصر التالية؟",
-            "type": "multi",
-            "step": 4,
-            "options": [
-                "بيان موجز يوضح ما تقدمه بوضوح",
-                "صور تظهر كيف ستتحسن حياة العملاء باستخدامك",
-                "تسليط الضوء على المشكلات التي تحلها منتجاتك أو خدماتك",
-                "زر واضح ومباشر يدعو لاتخاذ الإجراء المطلوب",
-                "خطة من 3 خطوات تسهّل رحلة العميل",
-                "عرض مجاني يجذب البريد الإلكتروني للعملاء",
-                "صور للعملاء وهم سعداء باستخدام المنتج أو الخدمة"
-            ]
-        },
-        {
-            "id": 15,
-            "text": "هل تقدّم على موقعك ملف PDF أو محتوى قابل للتنزيل يجذب العملاء ويجمع عناوين البريد الإلكتروني؟",
-            "type": "yesno",
-            "step": 5,
-            "options": null
-        }])
+    {
+      "id": 1,
+      "text": "هل الرسالة التي توصلها عن منتجاتك أو خدماتك تساعد العملاء على فهم كيف يمكن لهذه المنتجات أو الخدمات مساعدتهم على البقاء والازدهار؟",
+      "type": "likert",
+      "step": 1,
+      "options": null
+    },
+    {
+      "id": 2,
+      "text": "هل يستطيع عملاؤك تسمية المشكلة الرئيسية التي تحلها شركتك؟",
+      "type": "likert",
+      "step": 1,
+      "options": null
+    },
+    {
+      "id": 3,
+      "text": "هل رسالتك واضحة وبسيطة؟",
+      "type": "likert",
+      "step": 1,
+      "options": null
+    },
+    {
+      "id": 4,
+      "text": "عند كتابة نصوص التسويق، هل تبدأ بالحديث عن المشكلة التي يحلها منتجك أو خدمتك للعميل؟",
+      "type": "yesno",
+      "step": 1,
+      "options": null
+    },
+    {
+      "id": 5,
+      "text": "هل لديك عرض تقديمي قصير وواضح يجذب الانتباه ويسهل فهمه؟",
+      "type": "yesno",
+      "step": 2,
+      "options": null
+    },
+    {
+      "id": 6,
+      "text": "هل يعرف كل شخص في شركتك كيفية الإجابة بطريقة مقنعة عن سؤال: \"ماذا تفعلون؟\"",
+      "type": "likert",
+      "step": 2,
+      "options": null
+    },
+    {
+      "id": 7,
+      "text": "صحيح أم خطأ: شعارنا يساعدنا على التميز عن المنافسين ويجعلنا لا ننسى",
+      "type": "yesno",
+      "step": 3,
+      "options": null
+    },
+    {
+      "id": 8,
+      "text": "صحيح أم خطأ: لدينا دليل أسلوب لضمان تطبيق علامتنا التجارية بشكل متسق وموحد في التسويق",
+      "type": "yesno",
+      "step": 3,
+      "options": null
+    },
+    {
+      "id": 9,
+      "text": "هل لديك دليل عمل (Playbook) يساعد فريقك على الالتزام برسالة العلامة التجارية لضمان استمرارية التناسق في التسويق؟",
+      "type": "likert",
+      "step": 3,
+      "options": null
+    },
+    {
+      "id": 10,
+      "text": "صحيح أم خطأ: موقعي الإلكتروني يحقق لي العملاء المحتملين والمبيعات التي أرغب بها",
+      "type": "yesno",
+      "step": 4,
+      "options": null
+    },
+    {
+      "id": 11,
+      "text": "هل يؤدي موقعك الإلكتروني بانتظام إلى تلقي الطلبات؟",
+      "type": "likert",
+      "step": 4,
+      "options": null
+    },
+    {
+      "id": 12,
+      "text": "عد النظر إلى عنوان موقعك لثلاث ثوانٍ، هل يمكن للعميل المحتمل معرفة (1) ما تقدمه، (2) كيف يحسن حياته، و(3) ما عليه فعله لشراء المنتج أو الخدمة؟",
+      "type": "likert",
+      "step": 4,
+      "options": null
+    },
+    {
+      "id": 13,
+      "text": "هل قمت بجمع وعرض شهادات العملاء على موقعك الإلكتروني؟",
+      "type": "yesno",
+      "step": 4,
+      "options": null
+    },
+    {
+      "id": 14,
+      "text": "هل يشمل موقعك الإلكتروني العناصر التالية؟",
+      "type": "multi",
+      "step": 4,
+      "options": [
+        "بيان موجز يوضح ما تقدمه بوضوح",
+        "صور تظهر كيف ستتحسن حياة العملاء باستخدامك",
+        "تسليط الضوء على المشكلات التي تحلها منتجاتك أو خدماتك",
+        "زر واضح ومباشر يدعو لاتخاذ الإجراء المطلوب",
+        "خطة من 3 خطوات تسهّل رحلة العميل",
+        "عرض مجاني يجذب البريد الإلكتروني للعملاء",
+        "صور للعملاء وهم سعداء باستخدام المنتج أو الخدمة"
+      ]
+    },
+    {
+      "id": 15,
+      "text": "هل تقدّم على موقعك ملف PDF أو محتوى قابل للتنزيل يجذب العملاء ويجمع عناوين البريد الإلكتروني؟",
+      "type": "yesno",
+      "step": 5,
+      "options": null
+    }])
   // it must be true at first
   const [isLoadingQuestions, setIsLoadingQuestions] = useState(false)
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0)
   const [answers, setAnswers] = useState<QuestionnaireState>({})
   const [isSubmitting, setIsSubmitting] = useState(false)
+  const [showSuccessModal, setShowSuccessModal] = useState(false);
   const navigate = useNavigate()
 
   //Uploading Questions section
@@ -186,6 +189,7 @@ const QuestionPage = () => {
     if (!isAnswered) return
 
     if (isLastQuestion) {
+       setShowSuccessModal(true);
       console.log(answers)
     } else {
       setCurrentQuestionIndex((prev) => prev + 1)
@@ -193,10 +197,12 @@ const QuestionPage = () => {
   }
 
   const handlePrevious = () => {
+    console.log(currentQuestionIndex,' ',length)
     if (currentQuestionIndex === 0) {
       // Go back to company information page
       navigate("/company-information")
-    } else {
+    } 
+    else {
       setAnswers((prev) => {
         const newAnswers = { ...prev }
         delete newAnswers[currentQuestionIndex]
@@ -205,6 +211,11 @@ const QuestionPage = () => {
       setCurrentQuestionIndex((prev) => prev - 1)
     }
   }
+
+  const downloadPdf = () => {
+    // Example: download file from your API
+    window.open("/api/download-report?companyId=" + companyId, "_blank");
+  };
 
   const submitAnswers = async () => {
     setIsSubmitting(true)
@@ -261,7 +272,7 @@ const QuestionPage = () => {
           <Button onClick={handlePrevious} className="normal-background text-text px-6 md:px-8 border border-text"
           >السابق</Button>
         </div>
-    
+
         {/* Question Card section */}
         <QuestionCard
           question={currentQuestion}
@@ -273,12 +284,39 @@ const QuestionPage = () => {
 
         {/* Next Button  section */}
         <div className="flex items-center justify-center w-full py-2">
-          <Button onClick={handleNext} className={cn(" px-8 md:px-10 ", !isAnswered ?"disabled ":"gradient-background")}
+          <Button onClick={handleNext} className={cn(" px-8 md:px-10 ", !isAnswered ? "disabled " : "gradient-background")}
             disabled={!isAnswered || isSubmitting} >{isLastQuestion ? "إرسال" : "التالي"}</Button>
         </div>
 
         {/* Progress Bar section */}
         <ProgressBar current={currentQuestionIndex + 1} total={questions.length} />
+
+        {/* Report Modal section */}
+        <ReportModal open={showSuccessModal} onClose={() => setShowSuccessModal(false)}>
+          <div className="felx flex-col justify-center w-full overflow-hidden">
+              <div className="flex justify-center w-full mb-4" >
+                <img
+                  src={logo}
+                  alt="scalera-logo"
+                  width={isTablet ? 120 : 180}
+                  loading="lazy"
+                  decoding="async"
+                  aria-label="scalera-logo"
+                />
+              </div>
+            <p className="question text-text mb-6 text-center">تهانينا، تم توليد التقرير الخاص بك بنجاح.</p>
+
+            <Button
+              className="gradient-background px-8 py-2 w-full"
+              onClick={() => downloadPdf()}
+            >
+              <div className="flex items-center justify-center gap-4 overflow-hidden">
+             حمّل تقريرك الآن
+             <Icon name="Gmail" cls="w-2 h-2 flex items-center overflow-hidden"/>
+             </div>
+            </Button>
+          </div>
+        </ReportModal>
       </div>
     </main>
   )
