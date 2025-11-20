@@ -242,9 +242,9 @@ const QuestionPage = () => {
 
   return (
     <main className="flex grow w-full">
-      <div className="max-w-[1440px] mx-auto w-full flex flex-col  pb-8 md:pb-16 ">
+      <div className=" max-w-[1440px] mx-auto w-full flex flex-col  pb-8 md:pb-16 ">
         {/* Header section */}
-        <div className="fixed flex items-center h-16 md:h-32 bg-header-bg md:bg-transparent px-8 2xl:px-0  shadow-[0_2px_2px_#A5BFCB] md:shadow-none">
+        <div className="md:fixed flex items-center h-16 md:h-32 bg-header-bg md:bg-transparent px-8 2xl:px-0  shadow-[0_2px_2px_#A5BFCB] md:shadow-none">
           <NavLink to="" aria-label="scalera-logo">
             <img
               src={logo}

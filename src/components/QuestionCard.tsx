@@ -2,7 +2,7 @@
 import { cn } from "@/lib/utils"
 import Button from "./ui/Button"
 import Icon from "./ui/icon/Icon"
-
+import { motion } from "framer-motion"
 export type QuestionType = "yesno" | "multi" | "likert"
 
 export interface Question {
@@ -28,6 +28,7 @@ interface QuestionCardProps {
 
 const ratingLabels = ["ليس تماماً", "قليلاً", "لست متأكد", "نوعاً ما", "بالتأكيد"]
 const ratingEmojis = ["Face1", "Face2", "Face3", "Face4", "Face5"]
+
 export function QuestionCard({ question, answer, onAnswer, currentIndex, totalQuestions }: QuestionCardProps) {
   // Yes or No Button Section
   const renderYesNo = () => (
@@ -145,12 +146,20 @@ export function QuestionCard({ question, answer, onAnswer, currentIndex, totalQu
   }
 
   return (
-    <div className="w-full px-4 py-8 flex flex-col items-center justify-center gap-6 min-h-[60%]">
-      <div className="flex flex-col items-center gap-4 text-center">
+    <div className="w-full px-4 py-8 flex flex-col items-center justify-between gap-6 min-h-94 md:min-h-[60%] xl:min-h-fit ">
+      <div className="flex flex-col items-center gap-4 text-center overflow-hidden">
         <h2 className="subtitle text-linear">
-          السؤال {currentIndex + 1} من {totalQuestions}
+          السؤال <motion.span  key={`title-${currentIndex}`}
+    initial={{ opacity: 0, y: 20 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.35, ease: "easeOut" }}
+    >{currentIndex + 1}</motion.span> من {totalQuestions}
         </h2>
-        <h1 className="text-text question w-full md:w-[60%]">{question.text}</h1>
+        <motion.h1   key={`text-${currentIndex}`}
+    initial={{ opacity: 0, y: 20 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.4, ease: "easeOut", delay: 0.05 }}
+        className="text-text question w-full md:w-[80%] lg:w-full max-w-5xl">{question.text}</motion.h1>
       </div>
 
       {renderQuestion()}
