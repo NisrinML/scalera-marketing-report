@@ -304,7 +304,7 @@ const QuestionPage = () => {
                   aria-label="scalera-logo"
                 />
               </div>
-            <p className="question text-text mb-6 text-center">تهانينا، تم توليد التقرير الخاص بك بنجاح.</p>
+            <p className="question text-text mb-6 text-center">تهانينا، تقريرك أصبح جاهزاً الآن</p>
 
             <Button
               className="gradient-background px-8 py-2 w-full"
@@ -312,7 +312,7 @@ const QuestionPage = () => {
             >
               <div className="flex items-center justify-center gap-4 overflow-hidden">
              حمّل تقريرك الآن
-             <Icon name="Gmail" cls="w-2 h-2 flex items-center overflow-hidden"/>
+             <Icon name="Download" cls="w-2 h-2 flex items-center overflow-hidden"/>
              </div>
             </Button>
           </div>

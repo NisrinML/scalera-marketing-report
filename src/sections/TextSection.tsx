@@ -2,7 +2,7 @@ import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 const TextSection = () => {
     const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
+ const isInView = useInView(ref, { once: true, margin: "-100px 0px -100px 0px" });
 
   return (
         <section className=" mx-auto px-8 xl:px-0 flex items-center justify-center py-6 md:py-20 2xl:py-32">
