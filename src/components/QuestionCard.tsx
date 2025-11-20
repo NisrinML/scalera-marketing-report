@@ -1,6 +1,7 @@
 
 import { cn } from "@/lib/utils"
 import Button from "./ui/Button"
+import Icon from "./ui/icon/Icon"
 
 export type QuestionType = "yesno" | "multi" | "likert"
 
@@ -25,16 +26,17 @@ interface QuestionCardProps {
   totalQuestions: number
 }
 
-const ratingLabels = ["للأسف جداً", "للأسف", "محايد", "شيئاً", "بالتأكيد"]
-const ratingEmojis = ["😢", "😟", "😐", "🙂", "😄"]
+const ratingLabels = ["ليس تماماً", "قليلاً", "لست متأكد", "نوعاً ما", "بالتأكيد"]
+const ratingEmojis = ["Face1", "Face2", "Face3", "Face4", "Face5"]
 export function QuestionCard({ question, answer, onAnswer, currentIndex, totalQuestions }: QuestionCardProps) {
+  // Yes or No Button Section
   const renderYesNo = () => (
-    <div className="flex gap-4 justify-center mt-8">
+    <div className="flex gap-4 justify-center mt-8 w-full py-2">
       <Button
         variant={answer?.value === "Yes" ? "default" : "outline"}
         className={cn(
-          "px-8 py-6 text-lg",
-          answer?.value === "Yes" ? "bg-blue-500 hover:bg-blue-600 text-white" : "border-gray-300",
+          "normal-background text-text w-32 h-8 md:w-64 md:h-12 border border-text no-shadow ",
+          answer?.value === "Yes" ? "background-hover" : "",
         )}
         onClick={() =>
           onAnswer({
@@ -48,8 +50,8 @@ export function QuestionCard({ question, answer, onAnswer, currentIndex, totalQu
       <Button
         variant={answer?.value === "No" ? "default" : "outline"}
         className={cn(
-          "px-8 py-6 text-lg",
-          answer?.value === "No" ? "bg-blue-500 hover:bg-blue-600 text-white" : "border-gray-300",
+         "normal-background text-text  w-32 h-8 md:w-64 md:h-12  border border-text no-shadow ",
+          answer?.value === "No" ? "background-hover" : "",
         )}
         onClick={() =>
           onAnswer({
@@ -63,14 +65,21 @@ export function QuestionCard({ question, answer, onAnswer, currentIndex, totalQu
     </div>
   )
 
+  // Multi Button Section
   const renderCheckbox = () => (
     <div className="space-y-3 mt-8">
       {question.options?.map((option, idx) => (
         <label
           key={idx}
-          className="flex items-center gap-3 p-3 border border-gray-300 rounded-lg cursor-pointer hover:bg-gray-50 transition"
-        >
-          <input
+           className={cn(
+    "flex items-start gap-2 w-full cursor-pointer p-2 rounded-md border transition-colors",
+    "text-text hover:bg-hover hover:text-subtitle hover:border-subtitle",
+    Array.isArray(answer?.value) && answer.value.includes(option)
+      ? "bg-hover border-subtitle text-subtitle"
+      : "border-text"
+  )}
+       >
+           <input
             type="checkbox"
             checked={Array.isArray(answer?.value) ? answer.value.includes(option) : false}
             onChange={(e) => {
@@ -83,16 +92,20 @@ export function QuestionCard({ question, answer, onAnswer, currentIndex, totalQu
                 value: newValues,
               })
             }}
-            className="w-5 h-5 accent-blue-500"
+            className=" peer
+                        my-auto w-4 h-4 md:w-5 md:h-5 rounded-md border-2 border-text
+                        checked:bg-subtitle checked:border-subtitle
+                        cursor-pointer"
           />
-          <span className="text-right flex-1">{option}</span>
+          <span className="text  peer-checked:text-subtitle ">{option}</span>
         </label>
       ))}
     </div>
   )
 
+  // Likert Button Section
   const renderRating = () => (
-    <div className="flex gap-4 justify-center mt-8 flex-wrap">
+    <div className="flex gap-2 justify-center flex-wrap w-full md:w-[60%]">
       {ratingEmojis.map((emoji, idx) => (
         <button
           key={idx}
@@ -103,14 +116,16 @@ export function QuestionCard({ question, answer, onAnswer, currentIndex, totalQu
             })
           }
           className={cn(
-            "flex flex-col items-center gap-2 p-4 rounded-lg transition",
+            "flex-1 flex flex-col items-center gap-2 p-2 rounded-md transition overflow-hidden hover:cursor-pointer",
             answer?.value === idx + 1
-              ? "bg-blue-100 border-2 border-blue-500"
-              : "hover:bg-gray-100 border-2 border-transparent",
+              ? "bg-hover border border-link"
+              : "hover:bg-gray-100 border border-transparent",
           )}
         >
-          <span className="text-4xl">{emoji}</span>
-          <span className="text-sm text-gray-600 text-center">{ratingLabels[idx]}</span>
+          <div className="w-[30px] h-[30px] md:w-16 md:h-16 flex items-center">
+          <Icon name={ratingEmojis[idx]} cls="w-[100%] h-[100%] flex items-center justify-center"/>
+          </div>
+          <span className="text text-text text-center">{ratingLabels[idx]}</span>
         </button>
       ))}
     </div>
@@ -135,7 +150,7 @@ export function QuestionCard({ question, answer, onAnswer, currentIndex, totalQu
         <h2 className="subtitle text-linear">
           السؤال {currentIndex + 1} من {totalQuestions}
         </h2>
-        <h1 className="text-subtitle question w-[60%]">{question.text}</h1>
+        <h1 className="text-text question w-full md:w-[60%]">{question.text}</h1>
       </div>
 
       {renderQuestion()}

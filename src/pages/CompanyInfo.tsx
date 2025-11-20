@@ -3,10 +3,10 @@ import logo from "../assets/logo.webp";
 import useIsTablet from "@/hooks/useTablet";
 import { useState } from "react";
 import type { CompanyInformation } from "@/types/CompanyInformation";
-import type { ValidationError } from "@/types/validationError";
 import { validatePage2 } from "@/lib/validation";
 import Input from "@/components/ui/Input";
 import Button from "@/components/ui/Button";
+import type { ValidationError } from "@/types/validationError";
 
 const CompanyInfo = () => {
   const isTablet = useIsTablet()
@@ -264,7 +264,7 @@ const CompanyInfo = () => {
             {/*Services  Section */}
             <div className="flex flex-col gap-2 self-start md:gap-4 items-start w-full">
               <h2 className="subtitle text-subtitle lg:w-[70%]">6-قبل إجراء تقرير ScaleraMarketingReport التسويقي، أعلم أنني بحاجة إلى المساعدة في (اختر جميع ما ينطبق):</h2>
-              <div className="flex flex-col items-start gap-2 md:gap-0 ">
+              <div className="flex flex-col items-start gap-2 md:gap-0 w-full">
 
                 {scaleraServices.map(option => (
                   <label

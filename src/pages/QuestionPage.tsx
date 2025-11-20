@@ -244,7 +244,7 @@ const QuestionPage = () => {
     <main className="flex grow w-full">
       <div className="max-w-[1440px] mx-auto w-full flex flex-col  pb-8 md:pb-16 ">
         {/* Header section */}
-        <div className="flex items-center h-16 md:h-32 bg-header-bg md:bg-transparent px-8 2xl:px-0  shadow-[0_2px_2px_#A5BFCB] md:shadow-none">
+        <div className="fixed flex items-center h-16 md:h-32 bg-header-bg md:bg-transparent px-8 2xl:px-0  shadow-[0_2px_2px_#A5BFCB] md:shadow-none">
           <NavLink to="" aria-label="scalera-logo">
             <img
               src={logo}
@@ -257,7 +257,7 @@ const QuestionPage = () => {
           </NavLink>
         </div>
         {/* Previous Button section */}
-        <div className="flex items-center justify-center w-full py-2">
+        <div className="mt-16 md:mt-32 flex items-center justify-center w-full py-2">
           <Button onClick={handlePrevious} className="normal-background text-text px-6 md:px-8 border border-text"
           >السابق</Button>
         </div>
@@ -273,7 +273,7 @@ const QuestionPage = () => {
 
         {/* Next Button  section */}
         <div className="flex items-center justify-center w-full py-2">
-          <Button onClick={handleNext} className={cn(" px-8 md:px-10 ", isAnswered && !isSubmitting && "bg-gray-400 text-gray-600 cursor-not-allowed")}
+          <Button onClick={handleNext} className={cn(" px-8 md:px-10 ", !isAnswered ?"disabled ":"gradient-background")}
             disabled={!isAnswered || isSubmitting} >{isLastQuestion ? "إرسال" : "التالي"}</Button>
         </div>
 

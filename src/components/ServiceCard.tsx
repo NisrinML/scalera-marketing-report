@@ -9,7 +9,7 @@ const ServiceCard = ({ card }: ServiceCardComponentProps) => {
     const isTablet=useIsTablet(920)
   return (
     <div
-      className={`relative flex flex-col border border-text items-center justify-between gap-2 h-[300px] w-[136px] md:h-[420px] md:w-[270px] px-4 text-center card-shadow py-8 md:py-14 lg:py-8
+      className={`relative flex flex-col border border-text items-center justify-center gap-4 h-[300px] w-[200px] md:h-[420px] md:w-[270px] px-4 text-center card-shadow py-8 md:py-14 lg:py-8
       ${
         card.loc == "r"
           ? "rounded-tr-xl rounded-tl-xl rounded-bl-xl rounded-br-[50px] md:rounded-tr-3xl md:rounded-tl-3xl md:rounded-bl-3xl md:rounded-br-[100px]"
