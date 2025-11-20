@@ -4,6 +4,9 @@
 import { cn } from "@/lib/utils"
 interface ButtonProps extends React.ComponentProps<"button"> {
   onCtaClick?: () => void
+  variant?: "default" | "outline" | "secondary"
+  size?: "sm" | "md" | "lg"
+
 }
 
 function Button({ children, className, onCtaClick,...props }: ButtonProps) {
