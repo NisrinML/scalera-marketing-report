@@ -257,11 +257,11 @@ const QuestionPage = () => {
           </NavLink>
         </div>
         {/* Previous Button section */}
-        <div className="flex items-center justify-center w-full">
+        <div className="flex items-center justify-center w-full py-2">
           <Button onClick={handlePrevious} className="normal-background text-text px-6 md:px-8 border border-text"
           >السابق</Button>
         </div>
-
+    
         {/* Question Card section */}
         <QuestionCard
           question={currentQuestion}
@@ -272,7 +272,7 @@ const QuestionPage = () => {
         />
 
         {/* Next Button  section */}
-        <div className="flex items-center justify-center w-full">
+        <div className="flex items-center justify-center w-full py-2">
           <Button onClick={handleNext} className={cn(" px-8 md:px-10 ", isAnswered && !isSubmitting && "bg-gray-400 text-gray-600 cursor-not-allowed")}
             disabled={!isAnswered || isSubmitting} >{isLastQuestion ? "إرسال" : "التالي"}</Button>
         </div>

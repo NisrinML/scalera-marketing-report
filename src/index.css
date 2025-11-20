@@ -155,7 +155,7 @@ section {
   }
 
   .question {
-    @apply font-cairo text-[20px] md:text-[24px] lg:text-[30px] font-semibold;
+    @apply font-cairo text-[20px] md:text-[24px] lg:text-[30px] font-semibold leading-6 md:leading-14;
   }
 
 

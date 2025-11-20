@@ -130,12 +130,12 @@ export function QuestionCard({ question, answer, onAnswer, currentIndex, totalQu
   }
 
   return (
-    <div className="w-full max-w-2xl mx-auto px-4 py-8">
-      <div className="text-center">
-        <h2 className="text-lg text-blue-400 mb-4">
+    <div className="w-full px-4 py-8 flex flex-col items-center justify-center gap-6 min-h-[60%]">
+      <div className="flex flex-col items-center gap-4 text-center">
+        <h2 className="subtitle text-linear">
           السؤال {currentIndex + 1} من {totalQuestions}
         </h2>
-        <h1 className="text-2xl font-semibold text-right text-gray-800 mb-8">{question.text}</h1>
+        <h1 className="text-subtitle question w-[60%]">{question.text}</h1>
       </div>
 
       {renderQuestion()}
