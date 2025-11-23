@@ -36,7 +36,7 @@ export function QuestionCard({ question, answer, onAnswer, currentIndex, totalQu
       <Button
         variant={answer?.value === "Yes" ? "default" : "outline"}
         className={cn(
-          "normal-background text-text w-32 h-8 md:w-64 md:h-12 border border-text no-shadow ",
+          "normal-background text-text w-32 h-8 py-0 md:w-64 md:h-12 border border-text no-shadow ",
           answer?.value === "Yes" ? "background-hover" : "",
         )}
         onClick={() =>
@@ -51,7 +51,7 @@ export function QuestionCard({ question, answer, onAnswer, currentIndex, totalQu
       <Button
         variant={answer?.value === "No" ? "default" : "outline"}
         className={cn(
-         "normal-background text-text  w-32 h-8 md:w-64 md:h-12  border border-text no-shadow ",
+         "normal-background text-text  w-32 h-8 py-0 md:w-64 md:h-12  border border-text no-shadow ",
           answer?.value === "No" ? "background-hover" : "",
         )}
         onClick={() =>

@@ -17,7 +17,7 @@ const Footer = () => {
              className= "bg-white text-text placeholder:text-placeholder px-4 py-2 rounded-lg md:rounded-xl w-full border border-text description focus:outline-none focus:ring-1 focus:ring-placeholder"
 
     />
-            <Button type="submit" className="description w-full lg:w-fit">اشتراك</Button>
+            <Button type="submit" className="description w-full lg:w-fit m-1 md:m-2">اشتراك</Button>
           </form>
           {/* social links section */}
           <div className="flex flex-col items-center md:items-end justify-center  gap-8 md:pl-16 md:gap-16 flex-2">

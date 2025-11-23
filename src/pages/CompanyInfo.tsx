@@ -1,7 +1,7 @@
 import { NavLink, useNavigate } from "react-router-dom"
 import logo from "../assets/logo.webp";
 import useIsTablet from "@/hooks/useTablet";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import type { CompanyInformation } from "@/types/CompanyInformation";
 import { validatePage2 } from "@/lib/validation";
 import Input from "@/components/ui/Input";
@@ -20,6 +20,9 @@ const CompanyInfo = () => {
     revenue_to: 0,
   });
   const [errors, setErrors] = useState<ValidationError>({});
+  const nameRef = useRef<HTMLDivElement>(null)
+  const websiteRef = useRef<HTMLDivElement>(null)
+  const employeeRef = useRef<HTMLDivElement>(null)
   const navigate=useNavigate()
   const businessTypes = [
     'التدريب / الاستشارات',
@@ -129,6 +132,14 @@ const CompanyInfo = () => {
       })
     } else {
       setErrors(validationErrors);
+      
+      if (validationErrors.name && nameRef.current) {
+        nameRef.current.scrollIntoView({ behavior: "smooth", block: "center" })
+      } else if (validationErrors.website && websiteRef.current) {
+        websiteRef.current.scrollIntoView({ behavior: "smooth", block: "center" })
+      }  else if ((validationErrors.employees_from || validationErrors.employees_to) && employeeRef.current) {
+        employeeRef.current.scrollIntoView({ behavior: "smooth", block: "center" })
+      }
     }
   };
 
@@ -141,7 +152,7 @@ const CompanyInfo = () => {
       <div className="max-w-[1440px] mx-auto w-full flex flex-col  pb-8 md:pb-16 ">
         {/* Header section */}
         <div className="flex items-center h-16 md:h-32 bg-header-bg md:bg-transparent px-8 2xl:px-0  shadow-[0_2px_2px_#A5BFCB] md:shadow-none">
-          <NavLink to="" aria-label="scalera-logo">
+          <NavLink to="/" aria-label="scalera-logo">
             <img
               src={logo}
               alt="scalera-logo"
@@ -157,7 +168,7 @@ const CompanyInfo = () => {
           <h1 className="title text-linear ">قبل أن تبدأ التقييم</h1>
           <div className="flex flex-col items-start gap-4 md:gap-8 w-full">
             {/*Company Name Section */}
-            <div className="flex flex-col gap-2 self-start md:gap-4 items-start w-full">
+            <div  ref={nameRef}  className="flex flex-col gap-2 self-start md:gap-4 items-start w-full">
               <h2 className="subtitle text-subtitle">1- ماهو اسم الشركة؟*</h2>
               <div className="w-full md:w-[40%]">
                 <Input
@@ -171,7 +182,7 @@ const CompanyInfo = () => {
               </div>
             </div>
             {/*Company Website Section */}
-            <div className="flex flex-col gap-2 self-start md:gap-4 items-start w-full">
+            <div ref={websiteRef} className="flex flex-col gap-2 self-start md:gap-4 items-start w-full">
               <h2 className="subtitle text-subtitle">2- ما هو عنوان موقع الشركة؟*</h2>
               <div className="w-full  md:w-[40%]">
                 <Input
@@ -236,7 +247,7 @@ const CompanyInfo = () => {
 
             </div>
             {/* Employee Range Section */}
-            <div className="flex flex-col gap-2 self-start md:gap-4 items-start w-full">
+            <div ref={employeeRef} className="flex flex-col gap-2 self-start md:gap-4 items-start w-full">
               <h2 className="subtitle text-subtitle">5- كم عدد الموظفين لدى شركتك؟</h2>
               {(errors.employees_from || errors.employees_to) && (
                 <p className="description text-red-500">{errors.employees_from || errors.employees_to}</p>

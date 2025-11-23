@@ -29,7 +29,7 @@ const Header = () => {
                 }`}>
             <div className="max-w-[1440px] mx-auto px-4 2xl:px-0">
                 <div className="flex items-center justify-between h-16 md:h-20 ">
-                    <NavLink to="" aria-label="scalera-logo">
+                    <NavLink to="/" aria-label="scalera-logo">
             <img
               src={logo}
               alt="scalera-logo"
