@@ -2,7 +2,7 @@ import useIsTablet from "@/hooks/useTablet";
 import logo from "../assets/logo.webp";
 import { NavLink, useNavigate } from "react-router-dom";
 import { QuestionCard, type Answer, type Question } from "@/components/QuestionCard";
-import { useContext, useEffect, useState } from "react";
+import {  useState } from "react";
 import Button from "@/components/ui/Button";
 import { cn } from "@/lib/utils";
 import { ProgressBar } from "@/components/BrogressBar";
@@ -14,7 +14,8 @@ interface QuestionnaireState {
 const QuestionPage = () => {
   const isTablet = useIsTablet()
   const companyId = 5 //localStorage.get("companyId")
-  const [questions, setQuestions] = useState<Question[]>([
+  //const [questions, setQuestions]
+  const [questions, _] = useState<Question[]>([
     {
       "id": 1,
       "text": "هل الرسالة التي توصلها عن منتجاتك أو خدماتك تساعد العملاء على فهم كيف يمكن لهذه المنتجات أو الخدمات مساعدتهم على البقاء والازدهار؟",
@@ -129,10 +130,12 @@ const QuestionPage = () => {
       "options": null
     }])
   // it must be true at first
-  const [isLoadingQuestions, setIsLoadingQuestions] = useState(false)
+  const isLoadingQuestions=false
+  //const [isLoadingQuestions, setIsLoadingQuestions] = useState(false)
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0)
   const [answers, setAnswers] = useState<QuestionnaireState>({})
-  const [isSubmitting, setIsSubmitting] = useState(false)
+  const isSubmitting=false
+  //const [isSubmitting, setIsSubmitting] = useState(false)
   const [showSuccessModal, setShowSuccessModal] = useState(false);
   const navigate = useNavigate()
 
@@ -217,39 +220,39 @@ const QuestionPage = () => {
     window.open("/api/download-report?companyId=" + companyId, "_blank");
   };
 
-  const submitAnswers = async () => {
-    setIsSubmitting(true)
-    try {
-      const answersToSubmit = Object.entries(answers).map(([index, answer]) => ({
-        question_id: questions[Number.parseInt(index)].id,
-        value: answer.value,
-      }))
+  // const submitAnswers = async () => {
+  //   setIsSubmitting(true)
+  //   try {
+  //     const answersToSubmit = Object.entries(answers).map(([index, answer]) => ({
+  //       question_id: questions[Number.parseInt(index)].id,
+  //       value: answer.value,
+  //     }))
 
-      const payload = {
-        company_id: Number(companyId),
-        answers: answersToSubmit,
-      }
+  //     const payload = {
+  //       company_id: Number(companyId),
+  //       answers: answersToSubmit,
+  //     }
 
-      console.log("Submitting questionnaire:", payload)
+  //     console.log("Submitting questionnaire:", payload)
 
-      const response = await fetch("/api/submit-questionnaire", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
-      })
+  //     const response = await fetch("/api/submit-questionnaire", {
+  //       method: "POST",
+  //       headers: { "Content-Type": "application/json" },
+  //       body: JSON.stringify(payload),
+  //     })
 
-      if (response.ok) {
-        alert("تم الإرسال بنجاح")
-      } else {
-        alert("حدث خطأ أثناء إرسال الإجابات")
-      }
-    } catch (error) {
-      console.error("Submission error:", error)
-      alert("حدث خطأ أثناء إرسال الإجابات")
-    } finally {
-      setIsSubmitting(false)
-    }
-  }
+  //     if (response.ok) {
+  //       alert("تم الإرسال بنجاح")
+  //     } else {
+  //       alert("حدث خطأ أثناء إرسال الإجابات")
+  //     }
+  //   } catch (error) {
+  //     console.error("Submission error:", error)
+  //     alert("حدث خطأ أثناء إرسال الإجابات")
+  //   } finally {
+  //     setIsSubmitting(false)
+  //   }
+  // }
 
   return (
     <main className="flex grow w-full">
@@ -292,7 +295,7 @@ const QuestionPage = () => {
         <ProgressBar current={currentQuestionIndex + 1} total={questions.length} />
 
         {/* Report Modal section */}
-        <ReportModal open={showSuccessModal} onClose={() => setShowSuccessModal(false)}>
+        <ReportModal open={showSuccessModal} onClose={() => {setShowSuccessModal(false);navigate('/');}}>
           <div className="felx flex-col justify-center w-full overflow-hidden">
               <div className="flex justify-center w-full mb-4" >
                 <img

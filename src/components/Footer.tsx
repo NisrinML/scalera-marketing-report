@@ -1,6 +1,5 @@
 import { NavLink } from "react-router-dom"
 import Button from "./ui/Button"
-import Input from "./ui/Input"
 import logo from "../assets/logo.webp";
 import useIsTablet from "@/hooks/useTablet";
 import Icon from "./ui/icon/Icon";

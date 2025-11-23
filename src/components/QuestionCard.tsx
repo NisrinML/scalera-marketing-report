@@ -107,7 +107,7 @@ export function QuestionCard({ question, answer, onAnswer, currentIndex, totalQu
   // Likert Button Section
   const renderRating = () => (
     <div className="flex gap-2 justify-center flex-wrap w-full md:w-[60%]">
-      {ratingEmojis.map((emoji, idx) => (
+      {ratingEmojis.map((_, idx) => (
         <button
           key={idx}
           onClick={() =>

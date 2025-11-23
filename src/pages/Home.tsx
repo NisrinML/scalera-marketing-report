@@ -1,6 +1,4 @@
 import HeroSection from "@/sections/HeroSection"
-import Background from '@/assets/Decore.webp'
-import useIsTablet from "@/hooks/useTablet"
 import AboutSection from "@/sections/AboutSection"
 import ServicesSection from "@/sections/ServicesSection"
 import { useRef } from "react";
@@ -9,7 +7,6 @@ import ResultsSection from "@/sections/ResultsSection"
 import Footer from "@/components/Footer"
 import Header from "@/components/Header"
 const Home = () => {
-  const isTablet = useIsTablet()
   const aboutRef = useRef<HTMLDivElement | null>(null);
   return (
     <>
