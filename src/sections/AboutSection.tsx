@@ -12,7 +12,7 @@ const AboutSection = () => {
         <h1 className='title text-linear self-center md:self-start'>
           النتائج لا تناسب الجهد المبذول؟
         </h1>
-        <p className='text-text text'>
+        <div className='text-text text'>
           تقرير <span className="text-subtitle">Scalera Marketing Report</span> التسويقي يمنحك خطة تسويق جاهزة، مُخصصة لعملك، قابلة للتطبيق فورًا.<br />
           ستتعرف من خلاله على:
           <br />
@@ -26,7 +26,7 @@ const AboutSection = () => {
             })}
           </ul>
           كل ذلك باستخدام إطار <span className="text-subtitle">Scalera Marketing Report</span> الذي أثبت نجاحه مع مئات الآلاف من الشركات حول العالم.
-             </p>
+             </div>
         <h4 className="text-subtitle subtitle text-center md:text-right">
           ابدأ بخطة واضحة بدل المحاولة العشوائية — واجعل تسويقك أخيرًا يعمل لصالحك.
         </h4>

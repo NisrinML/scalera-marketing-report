@@ -304,7 +304,7 @@ const QuestionPage = () => {
                   aria-label="scalera-logo"
                 />
               </div>
-            <p className="question text-text mb-6 text-center">تهانينا، تقريرك أصبح جاهزاً الآن</p>
+            <p className="question text-text mb-6 text-center overflow-hidden">تهانينا، تقريرك أصبح جاهزاً الآن</p>
 
             <Button
               className="gradient-background px-8 py-2 w-full"

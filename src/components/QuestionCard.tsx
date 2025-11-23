@@ -124,7 +124,7 @@ export function QuestionCard({ question, answer, onAnswer, currentIndex, totalQu
           )}
         >
           <div className="w-[30px] h-[30px] md:w-16 md:h-16 flex items-center">
-          <Icon name={ratingEmojis[idx]} cls="w-[100%] h-[100%] flex items-center justify-center"/>
+          <Icon name={ratingEmojis[idx]} cls="w-[100%] h-[100%] flex items-center justify-center overflow-hidden"/>
           </div>
           <span className="text text-text text-center">{ratingLabels[idx]}</span>
         </button>
@@ -159,7 +159,7 @@ export function QuestionCard({ question, answer, onAnswer, currentIndex, totalQu
     initial={{ opacity: 0, y: 20 }}
     animate={{ opacity: 1, y: 0 }}
     transition={{ duration: 0.4, ease: "easeOut", delay: 0.05 }}
-        className="text-text question w-full md:w-[80%] lg:w-full max-w-5xl">{question.text}</motion.h1>
+        className="text-text question w-full md:w-[80%] lg:w-full max-w-5xl overflow-hidden">{question.text}</motion.h1>
       </div>
 
       {renderQuestion()}
