@@ -10,16 +10,16 @@ const Footer = () => {
       <div className="max-w-[1440px] mx-auto py-8 flex flex-col gap-4">
         <div className="flex flex-col-reverse gap-4 md:flex-row md:justify-between">
           {/* connect section */}
-          <form className="flex flex-col items-start gap-4 px-8 2xl:px-0 md:gap-8 flex-1 overflow-hidden">
+          {/* <form className="flex flex-col items-start gap-4 px-8 2xl:px-0 md:gap-8 flex-1 overflow-hidden">
             <h4 className="text-subtitle subtitle -mb-2 lg:mb-0">تواصل معنا</h4>
             <input  type="email"  data-slot="input"   placeholder="بريدك الالكتروني" 
              className= "bg-white text-text placeholder:text-placeholder px-4 py-2 rounded-lg md:rounded-xl w-full border border-text description focus:outline-none focus:ring-1 focus:ring-placeholder"
 
     />
             <Button type="submit" className="description w-full lg:w-fit m-1 md:m-2">اشتراك</Button>
-          </form>
+          </form> */}
           {/* social links section */}
-          <div className="flex flex-col items-center md:items-end justify-center  gap-8 md:pl-16 md:gap-16 flex-2">
+          <div className="flex flex-col items-center md:items-start justify-center  gap-8 md:pr-16 xl:pr-24 md:gap-16 flex-2">
             <div className="flex flex-col flex-3 items-center justify-center gap-2 md:gap-4">
               <NavLink to="/" aria-label="scalera-logo">
                 <img
@@ -48,9 +48,9 @@ const Footer = () => {
         </div>
         {/* copy right section */}
         <div className="flex flex-col-reverse md:flex-row justify-between items-center flex-1 mt-4 lg:mt-16 md:px-8 2xl:px-0">
-          <div className="flex flex-row justify-between gap-8 md:gap-16 text-text description">
-            <h4>شروط الاستخدام</h4>
-            <h4>سياسة الخصوصية</h4>
+          <div className="flex flex-row justify-between gap-8 md:gap-16 text-text ">
+            <h4 className="hover:cursor-pointer hover:text-subtitle hover:scale-[1.01] description">شروط الاستخدام</h4>
+            <h4  className="hover:cursor-pointer hover:text-subtitle hover:scale-[1.01] description">سياسة الخصوصية</h4>
           </div>
 
           <h4 className="text-text description">

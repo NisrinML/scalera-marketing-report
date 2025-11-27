@@ -152,31 +152,31 @@ section {
 
 @layer base {
   .main-title {
-    @apply font-cairo text-[20px] md:text-[40px] lg:text-[50px] font-bold leading-10 md:leading-24;
+    @apply font-cairo text-[20px] md:text-[40px] lg:text-[50px] font-bold leading-10 md:leading-24 overflow-hidden;
   }
 
   .title {
-    @apply font-cairo text-[18px] md:text-[30px] lg:text-[40px] font-bold leading-12 md:leading-20;
+    @apply font-cairo text-[20px] md:text-[30px] lg:text-[40px] font-bold leading-12 md:leading-20 overflow-hidden;
   }
 
   .subtitle {
-    @apply font-cairo text-[12px] md:text-[16px] lg:text-[24px] font-bold leading-8 md:leading-12;
+    @apply font-cairo text-[16px] md:text-[16px] lg:text-[24px] font-bold leading-8 md:leading-12 overflow-hidden;
   }
 
   .text {
-    @apply font-cairo text-[10px] md:text-[14px] lg:text-[20px] font-semibold leading-6 md:leading-10;
+    @apply font-cairo text-[14px] md:text-[14px] lg:text-[20px] font-semibold leading-6 md:leading-10 overflow-hidden;
   }
 
   .description {
-    @apply font-cairo text-[10px] md:text-[14px] lg:text-[18px] leading-6 md:leading-10;
+    @apply font-cairo text-[14px] md:text-[14px] lg:text-[18px] leading-6 md:leading-10 overflow-hidden;
   }
 
   .button-text {
-    @apply font-cairo text-[14px] md:text-[16px] lg:text-[20px] font-semibold;
+    @apply font-cairo text-[14px] md:text-[16px] lg:text-[20px] font-semibold overflow-hidden;
   }
 
   .question {
-    @apply font-cairo text-[20px] md:text-[24px] lg:text-[30px] font-semibold leading-8 md:leading-14;
+    @apply font-cairo text-[20px] md:text-[24px] lg:text-[30px] font-semibold leading-8 md:leading-14 overflow-hidden;
   }
 
 

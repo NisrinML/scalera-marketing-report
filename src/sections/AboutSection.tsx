@@ -4,31 +4,34 @@ import { motion } from "framer-motion"
 const AboutSection = () => {
 
   const isTablet = useIsTablet(920)
-  const aboutList = ["أين نقاط الضعف في تسويقك بالضبط", "ما الذي يمنع العملاء من التفاعل معك والشراء", "والخطوات العملية التي يجب اتباعها لتحقيق نمو حقيقي"]
+  const aboutList = [
+    "أين تكمن نقاط الضعف في تسويقك ولماذا لا تحصل على النتائج المتوقعة", 
+    "ما الذي يمنع العملاء من التفاعل والشراء رغم جهودك", 
+    "ما هي الخطوات العملية التي ستساعدك على تحقيق نمو حقيقي ومستمر"]
  
   return (
     <section className={`relative mx-auto px-8 py-2 md:py-4 2xl:px-0 flex flex-col md:flex-row gap-4 items-center ${isTablet ? `bg-header-bg` : `bg-transparent`}`}>
-      <div className='flex flex-col items-start justify-center text-right gap-4 lg:gap-8 flex-2'>
-        <h1 className='title text-linear self-center md:self-start'>
-          النتائج لا تناسب الجهد المبذول؟
+      <div className='flex flex-col items-start justify-center text-right gap-2 lg:gap-4 flex-2'>
+        <h1 className='title text-linear self-center text-center md:text-right md:self-start'>
+          هل تشعر بأن النتائج لا تناسب الجهد المبذول؟
         </h1>
         <div className='text-text text'>
-          تقرير <span className="text-subtitle">Scalera Marketing Report</span> التسويقي يمنحك خطة تسويق جاهزة، مُخصصة لعملك، قابلة للتطبيق فورًا.<br />
-          ستتعرف من خلاله على:
-          <br />
+         لست وحدك!<br/>
+         كثير من الشركات تعمل بجد… لكنها تعمل دون خطة واضحة تقودها للنتائج التي تستحقها.
+تقرير سكاليرا يمنحك خطة تسويق مخصّصة لعملك، وقابلة للتطبيق من اليوم الأول. من خلال التقرير المقدم لك ستعرف بالضبط:
           <ul className="list-disc list-inside ">
             {aboutList.map((item, index) => {
               return (
-                <li key={index} >
+                <li key={index} className="overflow-hidden">
                   {item}
                 </li>
               )
             })}
           </ul>
-          كل ذلك باستخدام إطار <span className="text-subtitle">Scalera Marketing Report</span> الذي أثبت نجاحه مع مئات الآلاف من الشركات حول العالم.
+          كل ذلك باستخدام إطار <span className="text-subtitle">Scalera Marketing Report</span> الذي أثبت فعاليته مع العديد من الشركات.
              </div>
         <h4 className="text-subtitle subtitle text-center md:text-right">
-          ابدأ بخطة واضحة بدل المحاولة العشوائية — واجعل تسويقك أخيرًا يعمل لصالحك.
+          خطة واضحة، نتائج مؤكدة — ابدأ الآن واجعل تسويقك أخيرًا يحقق لك ما تستحقه.
         </h4>
       </div>
       {!isTablet &&
