@@ -12,7 +12,7 @@ const ResultCard = ({ card }: ResultCardComponentProps) => {
             <div className="flex flex-col  md:flex-1 md:max-h-[300px] lg:max-h-[400px] ">
                 <div className="flex flex-col items-start text-right justify-between gap-4 py-8 px-4 sm:py-20 md:gap-4 md:py-6 lg:py-16 md:px-8">
                     <h1 className="subtitle text-subtitle ">{card.title}</h1>
-                    <p className="description text-text">{card.desc}</p>
+                    <p className="text text-text">{card.desc}</p>
                     <NavLink aria-label="start your report" to="/user-information" className="text text-link ">ابدأ التقييم المجاني</NavLink>
                 </div>
             </div>

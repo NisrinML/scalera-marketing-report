@@ -31,14 +31,18 @@
 
 .dark {}
 
+
+
 @font-face {
-  font-family: "Cairo";
-  src: url("/fonts/Cairo-VariableFont_slnt,wght.ttf") format("opentype");
+   font-family: "Cairo";
+  src: 
+    local("cairo"),
+    url("/fonts/cairo.woff2") format("woff2"),
+    url("/fonts/cairo.woff") format("woff");
   font-weight: 400;
   font-style: normal;
+  font-display: swap;
 }
-
-
 html {
   scroll-snap-type: y proximity;
   scroll-behavior: smooth;
@@ -49,7 +53,12 @@ html {
   box-sizing: border-box;
 }
 
-body {}
+body {
+  body {
+    font-family: "Cairo", sans-serif !important;
+}
+
+}
 
 a {
   text-decoration: none;
@@ -178,11 +187,6 @@ section {
   .question {
     @apply font-cairo text-[20px] md:text-[24px] lg:text-[30px] font-semibold leading-8 md:leading-14 overflow-hidden;
   }
-
-
-
-
-
 
 }
 

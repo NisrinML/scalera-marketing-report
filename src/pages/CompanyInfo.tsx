@@ -207,7 +207,7 @@ const CompanyInfo = () => {
                     key={type}
                     type="button"
                     onClick={() => handleInputChange('business_type', type)}
-                    className={`w-[100px] h-[30px] rounded-md md:w-[180px] md:h-12 md:rounded-xl description transition-all whitespace-nowrap hover:cursor-pointer
+                    className={`w-[130px] h-[30px] rounded-md md:w-[180px] md:h-12 md:rounded-xl description transition-all whitespace-nowrap hover:cursor-pointer
                     hover:bg-white hover:text-subtitle hover:border-2 hover:border-subtitle 
                     ${formData.business_type === type
                         ? 'bg-white text-subtitle border-2 border-subtitle hover:border-subtitle'
@@ -233,7 +233,7 @@ const CompanyInfo = () => {
                     key={range.label}
                     type="button"
                     onClick={() => handleRevenueRangeSelect(range)}
-                    className={`w-[100px] h-[30px] rounded-md md:w-[180px] md:h-12 md:rounded-xl description transition-all whitespace-nowrap hover:cursor-pointer
+                    className={`w-[130px] h-[30px] rounded-md md:w-[180px] md:h-12 md:rounded-xl description transition-all whitespace-nowrap hover:cursor-pointer
                     hover:bg-white hover:text-subtitle hover:border-2 hover:border-subtitle 
                      ${formData.revenue_from === range.from && formData.revenue_to === range.to
                         ? 'bg-white text-subtitle border-2 border-subtitle hover:border-subtitle'
@@ -258,7 +258,7 @@ const CompanyInfo = () => {
                     key={range.label}
                     type="button"
                     onClick={() => handleEmployeeRangeSelect(range)}
-                    className={`w-[100px] h-[30px] rounded-md md:w-[180px] md:h-12 md:rounded-xl description transition-all whitespace-nowrap hover:cursor-pointer
+                    className={`w-[130px] h-[30px] rounded-md md:w-[180px] md:h-12 md:rounded-xl description transition-all whitespace-nowrap hover:cursor-pointer
                     hover:bg-white hover:text-subtitle hover:border-2 hover:border-subtitle 
                     ${formData.employees_from === range.from && formData.employees_to === range.to
                         ? 'bg-white text-subtitle border-2 border-subtitle hover:border-subtitle'
