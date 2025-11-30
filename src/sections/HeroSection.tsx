@@ -19,15 +19,26 @@ const HeroSection = () => {
       </div>
       <div className='flex items-end flex-[1.5] overflow-hidden'>
     <motion.img
-  src={HeroImage}
+   src={HeroImage}
   alt="hero image"
   loading="lazy"
   decoding="async"
   width={isTablet ? 400 : 800}
-  className="object-cover"
-  initial={{ opacity: 0, y: 40 }}
-  animate={{ opacity: 1, y: 0 }}
-  transition={{ duration: 1, ease: "easeOut" }}
+  className="object-cover origin-bottom" 
+  initial={{ 
+    opacity: 0,
+    y: 40,
+    scaleY: 0.6,        // compressed vertically
+  }}
+  animate={{ 
+    opacity: 1,
+    y: 0,
+    scaleY: 1,          // return to natural size
+  }}
+  transition={{ 
+    duration: 0.8,
+    ease: "easeOut"
+  }}
 />
 </div>
     </section>
