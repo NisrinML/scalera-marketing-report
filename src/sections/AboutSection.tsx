@@ -28,7 +28,7 @@ const AboutSection = () => {
               )
             })}
           </ul>
-          كل ذلك باستخدام إطار <span className="text-subtitle">Scalera Marketing Report</span> الذي أثبت فعاليته مع العديد من الشركات.
+          كل ذلك باستخدام إطار <span className="text-subtitle">Scalera Marketing </span> الذي أثبت فعاليته مع العديد من الشركات.
              </div>
         <h4 className="text-subtitle subtitle text-center md:text-right">
           خطة واضحة، نتائج مؤكدة — ابدأ الآن واجعل تسويقك أخيرًا يحقق لك ما تستحقه.

@@ -274,7 +274,7 @@ const CompanyInfo = () => {
             </div>
             {/*Services  Section */}
             <div className="flex flex-col gap-2 self-start md:gap-4 items-start w-full">
-              <h2 className="subtitle text-subtitle lg:w-[70%]">6-قبل إجراء تقرير ScaleraMarketingReport التسويقي، أعلم أنني بحاجة إلى المساعدة في (اختر جميع ما ينطبق):</h2>
+              <h2 className="subtitle text-subtitle lg:w-[70%]">6-قبل إجراء تقرير ScaleraMarketing التسويقي، أعلم أنني بحاجة إلى المساعدة في (اختر جميع ما ينطبق):</h2>
               <div className="flex flex-col items-start gap-2 md:gap-0 w-full">
 
                 {scaleraServices.map(option => (
@@ -299,7 +299,7 @@ const CompanyInfo = () => {
             {/* Text Section */}
             <p className="text text-text">
               بالنقر على "التالي" في الأسفل، فإنني أوافق على <span className="text-subtitle hover:cursor-pointer hover:text-blue-background">شروط الخدمة{' '}</span> 
-              و{' '}<span className="text-subtitle hover:cursor-pointer hover:text-blue-background">سياسة الخصوصية</span> لـ ScaleraMarketingReport.
+              و{' '}<span className="text-subtitle hover:cursor-pointer hover:text-blue-background">سياسة الخصوصية</span> لـ ScaleraMarketing.
               <br />
               نحن ملتزمون بحماية خصوصيتك.
               <br />

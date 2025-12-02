@@ -9,7 +9,7 @@ import { circOut, motion } from "framer-motion";
 const ServicesSection = () => {
     const cardList: ServiceCardProps[] = [
         {
-            title: "خطة تسويق مخصّصة جاهزة للتطبيق",
+            title: "خطة تسويق مخصّصة لك وجاهزة للتطبيق",
             desc: "يقدّم لك إستراتيجية مدروسة تعزز نمو عملك وتزيد من أرباحك.",
             icon: Card3,
             loc: "r",

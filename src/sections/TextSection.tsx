@@ -17,11 +17,11 @@ const TextSection = () => {
         transition={{ duration: 0.9, ease: "easeOut" }}
             className=' flex flex-col gap-2 lg:gap-4 text-center px-10 py-6 lg:px-44 lg:py-12 border border-text rounded-tl-[50px] rounded-br-[50px] lg:rounded-tl-[100px] lg:rounded-br-[100px]'>
       <h1 className="title text-linear">النجاح استراتيجية لا صدفة</h1>
-      <p className='text-text text'>معظم الشركات لا تلفت الانتباه، ليس لأن منتجاتها ضعيفة، بل لأن رسالتها التسويقية غير واضحة.
-        <br/> في سوق مزدحم، من يعبّر عن قيمته بوضوح هو من يُسمع.
-        <br/>
-<span className="text-subtitle">Scalera Marketing Report</span> يساعدك على بناء خطة تسويقية فعّالة تقود إلى نمو وأرباح حقيقية.
-<br/> خصّص 10 دقائق فقط للتقييم، واحصل على خطة مخصّصة تُحوّل جهودك التسويقية إلى استثمار يحقق نتائج.</p>
+      <p className='text-text text'>العديد من المتاجر الإلكترونية تستحق أن يراها العملاء… لكن رسالتها غير واضحة بما يكفي ليلاحظها أحد.
+        <br/>  في سوق مزدحم وصاخب، من يعرف كيف يشرح قيمته بوضوح هو الوحيد الذي يتم اختياره.
+        <br/>مع 
+<span className="text-subtitle">{' '}Scalera</span> ستحصل على خطة تسويق فعّالة تُظهر قيمة عملك الحقيقية وتمنحك طريقًا واضحًا لزيادة المبيعات.
+<br/> أجب عن التقييم لمدة 10 دقائق فقط، واستلم خطتك المخصّصة لتساعدك على تحويل تسويقك إلى نتائج مذهلة.</p>
             </motion.div>
      </section>
   )
