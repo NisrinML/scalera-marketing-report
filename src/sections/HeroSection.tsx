@@ -27,12 +27,12 @@ const HeroSection = () => {
   className="object-cover origin-bottom" 
   initial={{ 
     opacity: 0,
-    y: 40,
+    y: isTablet?40:60,
     scaleY: 0.6,        // compressed vertically
   }}
   animate={{ 
     opacity: 1,
-    y: 0,
+    y: isTablet?0:20,
     scaleY: 1,          // return to natural size
   }}
   transition={{ 
