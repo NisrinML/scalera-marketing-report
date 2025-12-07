@@ -11,7 +11,7 @@ const HeroSection = () => {
     <section className="relative md:py-20 lg:py-0 lg:h-fit max-h-[800px] pt-20 lg:pt-28 lg:pb-10 overflow-hidden mx-auto px-8 2xl:px-0  flex flex-col md:flex-row gap-4 items-center">
       <div className='flex flex-col  items-center md:items-start justify-center text-center md:text-right gap-4 lg:gap-8 flex-2'>
         <h1 className='main-title text-linear'>
-          حوّل جهودك التسويقية إلى نتائج حقيقية لنمو أعمالك.
+          حوّل تسويقك لنتائج تزيد مبيعات متجرك الإلكتروني.
         </h1>
         <p className='text-text text'>
       ربما حاولت طرقًا عديدة في التسويق… لكنك ما زلت تبحث عن خطة تشعر أنك تستطيع الاعتماد عليها.<br/>

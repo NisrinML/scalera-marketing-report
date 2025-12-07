@@ -183,11 +183,11 @@ const CompanyInfo = () => {
             </div>
             {/*Company Website Section */}
             <div ref={websiteRef} className="flex flex-col gap-2 self-start md:gap-4 items-start w-full">
-              <h2 className="subtitle text-subtitle">2- ما هو عنوان موقع الشركة؟*</h2>
+              <h2 className="subtitle text-subtitle">2- ما هو عنوان موقع الشركة الإلكتروني؟*</h2>
               <div className="w-full  md:w-[40%]">
                 <Input
                   name="website"
-                  placeholder="موقع الشركة"
+                  placeholder="URL: www.yourwebsit"
                   value={formData.website}
                   onChange={(e) => handleInputChange('website', e.target.value)}
                   error={errors.website}
